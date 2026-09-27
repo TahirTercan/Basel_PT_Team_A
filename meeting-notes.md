@@ -7,9 +7,9 @@
 - project idea is chosen: a study planer 
 
 ### to do until 30.09.
-define the problem, solution (with whom what etc -> check slides)
-try to come up with 3-4 user stories
-Get little bit more familiar with the user stories, read the slides on user stories and draft 3-4 user stories, every one
+- define the problem, solution (with whom what etc -> check slides)
+- try to come up with 3-4 user stories
+- read the slides on user stories and draft 3-4 user stories each
 
 
 ### Proposal
