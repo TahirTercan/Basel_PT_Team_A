@@ -1,5 +1,13 @@
 # FHNW Semester 1, Group Project, Projet idea: Study planner
 
+###
+## Next actions:
+- [ ] Share Git Hub repository with Lecturers by 07/10. For them to check Problem and user stories.
+- [x] Agree on recurrent group meetings, Sunday 14:00?
+- [ ] In person touch point: Wednesdays at 12:15 to check questions/progress. 
+- [x] Review user stories and update up to 9 user stories.
+- [x] Assigned user stories (3 per group member)
+
 ## Meeting Notes 27.09.2026 - Kick off
 
 ### Done
@@ -14,6 +22,9 @@
 ### Proposal
 Deadline for the project is 06. December 
 Let’s aim for 29. Nov. 
+
+## Meeting Notes 04.10.2026 - Meeting #2
+
 
 ### How we collaborate
 - MS Teams

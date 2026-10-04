@@ -7,17 +7,33 @@ Part-time students (who) experiences difficulty planning how many hours of self 
 modules require per week (what), when they plan their week alongside their job and FH 
 lectures (where) resulting in too little time for self-study and fall behind (why).​
 
+## Project Goal:
+Making the planning of the self study of part time students more efficient .... 
+
 ## User stories:
-1. As a student, I want to add my subjects and exams so that I can keep my study information in one place.​ --> Assigned to: 
 
-2. As a student, I want the application to create a study plan based on my available time and upcoming exams, so that I can organize my time efficiently.​ --> Assigned to:
 
-3. As a student, I want to mark study sessions as completed so that I can track my progress.​ --> Assigned to:
+1. As a student, I want to see a list of all modules of my degree programme with their ECTS, so that I can choose my modules without typing names and ECTS and have an overview. //Marine
 
-4. As a student, I want to be able to see how many hours of work each module represents (total and in class)(calculated with ECTS), so that I know how much study time I should invest for each of them.​ --> Assigned to:
+2. As a student, I want to add modules from the list to my selection, so that the calculated study hours match my own semester. //Marine
 
-5. As a student, I want to see all my deadlines (exams, project,…), so that I can keep track and not miss anything​. --> Assigned to: 
-​
-6. As a student, I want to know how many hours I should invest each week for each module, so that I can keep track of my progress throughout the semester​. --> Assigned to: (repeated, to be checked)
+3. As a student, I want to remove a selected module, so that I can correct a wrong entry without re-entering everything. //Tahir
 
-7. As a student, I want to see the priority of different tasks, so that I can know which task I should prioritise​. --> Assigned to: (How can be mark priority? based ECTS? like: more ECTS = more priority?)
+4. As a student, I want to enter my class hours per week for each selected module, so that I do not plan my time in class twice. //Tahir
+
+5. As a student, I want to see how many hours of self-study each module requires per semester and per week, so that I can plan my week realistically. //Marcela
+
+6. As a student, I want to enter my free hours for each day of the week, so that I can see whether my free time is enough for my self-study. //Marcela
+
+7. 	As a student, I want to get a study plan that distributes my self-study hours over my free hours, so that I need less time to plan my week. //Marcela
+
+8. 	As a student, I want to mark study sessions as completed, so that I can see whether I am falling behind. //Marine
+
+9. 	As a student, I want my selected modules, class hours and free time to be saved for the next session, so that I do not have to enter everything again every week. //Tahir
+
+
+
+## Our assumptions and sources
+1 ECTS equivalent to approx. 30 hours of work
+Module weight -> Module overview BSc Business Information Technology part time, URL: https://www.fhnw.ch/++api++/de/wirtschaft/studium/angebot/studiengaenge/media/web_bit_cur25_moduluebersicht_tz.pdf/@@inline-file/file 
+Structure of the year -> "Jahresstruktur 2025 bis FS 2031_Start Curriculum25", URL: https://fhnw365.sharepoint.com/sites/inside-HSW-Stud/Freigegebene%20Dokumente/Forms/AllItems.aspx?csf=1&web=1&e=BOKMeT&CID=edd24bad%2Daca8%2D4a72%2D8ee6%2D47d8fdc24d5f&FolderCTID=0x012000223CD24C15B3F34CBC643E657E20FD95&id=%2Fsites%2Finside%2DHSW%2DStud%2FFreigegebene%20Dokumente%2FTermine%2FDeutsch 
