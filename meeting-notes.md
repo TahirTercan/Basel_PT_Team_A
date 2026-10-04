@@ -11,7 +11,6 @@
 - try to come up with 3-4 user stories
 - read the slides on user stories and draft 3-4 user stories each
 
-
 ### Proposal
 Deadline for the project is 06. December 
 Let’s aim for 29. Nov. 
@@ -19,5 +18,5 @@ Let’s aim for 29. Nov.
 ### How we collaborate
 - MS Teams
 - Whatsapp
-- Fix meetings onsite, on Wednesdays 11:45
+- Fix meetings onsite, on Wednesdays 12:15
 - Sessions at the weekend, planned prior
