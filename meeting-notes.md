@@ -1,6 +1,6 @@
 # FHNW Semester 1, Group Project, Projet idea: Study planner
 
-## Meeting Notes 27.09.2026
+## Meeting Notes 27.09.2026 - Kick off
 
 ### Done
 - repository is created, cloned and pullet by all of us
@@ -15,3 +15,9 @@
 ### Proposal
 Deadline for the project is 06. December 
 Let’s aim for 29. Nov. 
+
+### How we collaborate
+- MS Teams
+- Whatsapp
+- Fix meetings onsite, on Wednesdays 11:45
+- Sessions at the weekend, planned prior
