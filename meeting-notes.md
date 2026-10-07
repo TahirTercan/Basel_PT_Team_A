@@ -32,6 +32,9 @@ Let’s aim for 29. Nov.
 
 ### To do until 11.10
 - finish the other elements from the user stories (acceptance criteria,...)
+- check your user story and think of the logic
+- think of functions
+- update your user story based on the feedback of lecturer
 
 ## How we collaborate
 - MS Teams
