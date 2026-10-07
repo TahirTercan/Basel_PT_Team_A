@@ -1,6 +1,6 @@
 # Study Planner
 
-## A simple application to help students organize their study time.
+## A simple application to help part-time students organize their study time.
 
 ## The problem:
 Part-time students (who) experiences difficulty planning how many hours of self study their 
@@ -24,23 +24,89 @@ Study Planner solves the part of the problem where the weekly self-study hours a
 
 ## User stories:
 
-1. As a student, I want to see a list of all modules of my degree programme with their ECTS, so that I can choose my modules without typing names and ECTS and have an overview. //Marine
 
-2. As a student, I want to add modules from the list to my selection, so that the calculated study hours match my own semester. //Marine
+### 1. As a student, I want to see a list of all modules of my degree programme with their ECTS, so that I can choose my modules without typing names and ECTS and have an overview. 
+#### Assigned to :
+--> Marine
+#### Acceptance criteria :
 
-3. As a student, I want to remove a selected module, so that I can correct a wrong entry without re-entering everything. //Tahir
+#### Example :
 
-4. As a student, I want to enter my class hours per week for each selected module, so that I do not plan my time in class twice. //Tahir
+#### Edge cases :
 
-5. As a student, I want to see how many hours of self-study each module requires per semester and per week, so that I can plan my week realistically. //Marcela
 
-6. As a student, I want to enter my free hours for each day of the week, so that I can see whether my free time is enough for my self-study. //Marcela
+### 2. As a student, I want to add modules from the list to my selection, so that the calculated study hours match my own semester.
+#### Assigned to :
+--> Marine
+#### Acceptance criteria :
 
-7. 	As a student, I want to get a study plan that distributes my self-study hours over my free hours, so that I need less time to plan my week. //Marcela
+#### Example :
 
-8. 	As a student, I want to mark study sessions as completed, so that I can see whether I am falling behind. //Marine
+#### Edge cases :
 
-9. 	As a student, I want my selected modules, class hours, free hours and study sessions to be saved when I exit and loaded when I start the program, so that I do not have to enter everything again every week. //Tahir
+### 3. As a student, I want to remove a selected module, so that I can correct a wrong entry without re-entering everything. 
+#### Assigned to :
+--> Tahir
+#### Acceptance criteria :
+
+#### Example :
+
+#### Edge cases :
+
+### 4. As a student, I want to enter my class hours per week for each selected module, so that I do not plan my time in class twice.
+#### Assigned to :
+--> Tahir
+#### Acceptance criteria :
+
+#### Example :
+
+#### Edge cases :
+
+### 5. As a student, I want to see how many hours of self-study each module requires per semester and per week, so that I can plan my week realistically. 
+#### Assigned to :
+--> Marcela
+#### Acceptance criteria :
+
+#### Example :
+
+#### Edge cases :
+
+### 6. As a student, I want to enter my free hours for each day of the week, so that I can see whether my free time is enough for my self-study.
+#### Assigned to :
+--> Marcela
+#### Acceptance criteria :
+
+#### Example :
+
+#### Edge cases :
+
+### 7. 	As a student, I want to get a study plan that distributes my self-study hours over my free hours, so that I need less time to plan my week.
+#### Assigned to :
+--> Marcela
+#### Acceptance criteria :
+
+#### Example :
+
+#### Edge cases :
+
+### 8. 	As a student, I want to mark study sessions as completed, so that I can see whether I am falling behind.
+#### Assigned to :
+--> Marine
+#### Acceptance criteria :
+
+#### Example :
+
+#### Edge cases :
+
+### 9. 	As a student, I want my selected modules, class hours and free time to be saved for the next session, so that I do not have to enter everything again every week.
+#### Assigned to :
+--> Tahir
+#### Acceptance criteria :
+
+#### Example :
+
+#### Edge cases :
+
 
 
 ## Our assumptions and sources
