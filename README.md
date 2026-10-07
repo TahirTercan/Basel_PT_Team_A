@@ -8,10 +8,21 @@ modules require per week (what), when they plan their week alongside their job a
 lectures (where) resulting in too little time for self-study and fall behind (why).​
 
 ## Project Goal:
-Making the planning of the self study of part time students more efficient .... 
+Make the weekly self-study planning of part-time students more efficient and more effective: 
+less time needed for planning and fewer weeks with too little self-study.
+
+## Scenario ## 
+
+Study Planner solves the part of the problem where the weekly self-study hours are worked out and distributed: a student selects the modules of the semester, enters the class hours and the free hours of the week, and gets the self-study hours per module and a study plan for the week. 
+
+## User Roles ## 
+
+| Role | Description |
+|------|-------------|
+| **Student** | A part-time BSc BIT student who works alongside the degree programme and plans the weekly self-study for the modules of the current semester. |
+
 
 ## User stories:
-
 
 1. As a student, I want to see a list of all modules of my degree programme with their ECTS, so that I can choose my modules without typing names and ECTS and have an overview. //Marine
 
@@ -29,8 +40,7 @@ Making the planning of the self study of part time students more efficient ....
 
 8. 	As a student, I want to mark study sessions as completed, so that I can see whether I am falling behind. //Marine
 
-9. 	As a student, I want my selected modules, class hours and free time to be saved for the next session, so that I do not have to enter everything again every week. //Tahir
-
+9. 	As a student, I want my selected modules, class hours, free hours and study sessions to be saved when I exit and loaded when I start the program, so that I do not have to enter everything again every week. //Tahir
 
 
 ## Our assumptions and sources
