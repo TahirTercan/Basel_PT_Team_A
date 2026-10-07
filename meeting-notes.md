@@ -2,7 +2,7 @@
 
 ###
 ## Next actions:
-- [ ] Share Git Hub repository with Lecturers by 07/10. For them to check Problem and user stories.
+- [x] Share Git Hub repository with Lecturers by 07/10. For them to check Problem and user stories.
 - [x] Agree on recurrent group meetings, Sunday 14:00?
 - [ ] In person touch point: Wednesdays at 12:15 to check questions/progress. 
 - [x] Review user stories and update up to 9 user stories.
@@ -11,7 +11,7 @@
 ## Meeting Notes 27.09.2026 - Kick off
 
 ### Done
-- repository is created, cloned and pullet by all of us
+- repository is created, cloned and pulled by all of us
 - project idea is chosen: a study planer 
 
 ### to do until 30.09.
@@ -25,8 +25,15 @@ Let’s aim for 29. Nov.
 
 ## Meeting Notes 04.10.2026 - Meeting #2
 
+### Done 
+- agreed on the problem and the user stories
+- agreed on the user stories
+- user stories are assigned to group members fairly
 
-### How we collaborate
+### To do until 11.10
+- finish the other elements from the user stories (acceptance criteria,...)
+
+## How we collaborate
 - MS Teams
 - Whatsapp
 - Fix meetings onsite, on Wednesdays 12:15
