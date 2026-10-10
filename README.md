@@ -62,7 +62,8 @@ Study Planner solves the part of the problem where the weekly self-study hours a
 
 #### Edge cases :
 
-### 5. As a student, I want to see how many hours of self-study each module requires per semester and per week, so that I can plan my week realistically. 
+## US-5: View Self-Study Hours per Module and Week. 
+### As a **student**, **I want** to see how many hours of self-study each module requires per semester and per week, **so that** I can plan my week realistically. 
 #### Assigned to :
 --> Marcela
 #### Acceptance criteria :
@@ -71,7 +72,8 @@ Study Planner solves the part of the problem where the weekly self-study hours a
 
 #### Edge cases :
 
-### 6. As a student, I want to enter my free hours for each day of the week, so that I can see whether my free time is enough for my self-study.
+## US-6: Enter Weekly Availability to Assess Self-Study Time.
+### As a **student**, **I want** to enter my free hours for each day of the week, **so that** I can see whether my free time is enough for my self-study.
 #### Assigned to :
 --> Marcela
 #### Acceptance criteria :
@@ -80,7 +82,8 @@ Study Planner solves the part of the problem where the weekly self-study hours a
 
 #### Edge cases :
 
-### 7. 	As a student, I want to get a study plan that distributes my self-study hours over my free hours, so that I need less time to plan my week.
+## US7: Generate a Personalized Weekly Study Plan.	
+### As a **student**, **I want** to get a study plan that distributes my self-study hours over my free hours, **so that** I need less time to plan my week.
 #### Assigned to :
 --> Marcela
 #### Acceptance criteria :
