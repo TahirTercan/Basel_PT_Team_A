@@ -25,24 +25,35 @@ Study Planner solves the part of the problem where the weekly self-study hours a
 ## User stories:
 
 
-### 1. As a student, I want to see a list of all modules of my degree programme with their ECTS, so that I can choose my modules without typing names and ECTS and have an overview. 
+## US-1 : List of the assesment modules
+### As a **student**, **I want** to see a numbered list of the five assesment modules of my programm with their ECTS and a short description of each of them, **so that** I can have an overview of the modules of the first semester without looking them up somewhere else. 
 #### Assigned to :
 --> Marine
 #### Acceptance criteria :
-
+The assesment modules list, their ECTS and descritpion are diplayed when option 1 in the main menu.
+Each module is shown on its own line in the format <No>. <Name of the module> - <number of ECTS> : <description>.
+The displayed list starts at 1. and follows the order in modules.txt
 #### Example :
-
+**Given** modules.txt contains the five assesment modules, **when** the list is diplayed, **then** five line are shown.
 #### Edge cases :
+**However, given**   , **then**   .
 
-
-### 2. As a student, I want to add modules from the list to my selection, so that the calculated study hours match my own semester.
+## US-2 : Select modules to calculate overall hours for each 
+### As a **student**, **I want** to add modules from the list to my selection, **so that** the calculated overall hours for the whole semester to match my own.
 #### Assigned to :
 --> Marine
 #### Acceptance criteria :
-
+The list a modules with their associated number is displayed to allow the student to know with number should be selected depending on which class is taken, in the format <No>. <Name of the module>, when selecting option 2 in the main menu.
+The programm will ask which module should be added to the personalised selection.
+If the selection is done, the calculation of the overall hours of the selected modules will be displayed. Each line will display one module and its associated overall hours in the format <No>. <Name of the module> - <number of ECTS> ECTS : <Overall hours for the semester> hours for this module.
 #### Example :
-
+**Given** the selected modules are 1 and 2,**when** the selection is done, **then** the calculated overall hours for both of those modules will be displayed, eg :
+1. Mathematics_1 - 3 ECTS : 90 hours overall for this module.
+2. Statistics_1 - 3 ECTS : 90 hours overall for this module.
 #### Edge cases :
+**However, given** a number is not an option in the list,  **then** the message "This module doesn't exist." will be displayed and the selecting question will be asked again.
+**However, given** a number is already selected, **then** the message "The module is already selected." will be displayed and the selecting question will be asked again.
+**However, given** the selection comprise every possible modules, **then** the messsage "All modules are already selected!" will be displayed.
 
 ### 3. As a student, I want to remove a selected module, so that I can correct a wrong entry without re-entering everything. 
 #### Assigned to :
@@ -82,7 +93,7 @@ Study Planner solves the part of the problem where the weekly self-study hours a
 
 #### Edge cases :
 
-## US7: Generate a Personalized Weekly Study Plan.	
+## US-7: Generate a Personalized Weekly Study Plan.	
 ### As a **student**, **I want** to get a study plan that distributes my self-study hours over my free hours, **so that** I need less time to plan my week.
 #### Assigned to :
 --> Marcela
@@ -92,14 +103,16 @@ Study Planner solves the part of the problem where the weekly self-study hours a
 
 #### Edge cases :
 
-### 8. 	As a student, I want to mark study sessions as completed, so that I can see whether I am falling behind.
+## US-8 : Weekly record of studied hours
+### As a **student**, **I want** to keep a weekly record of the hours I actually studied for each of my selected module, **so that** I can see if I am falling behind over the weeks and if so from how much.
 #### Assigned to :
 --> Marine
 #### Acceptance criteria :
-
+When the option 8 is selected in the main menu, the list of modules from the personalised selection will be displayed.
 #### Example :
-
+**Given**   , **when**   , **then**   .
 #### Edge cases :
+**However, given**   , **then**   .
 
 ### 9. 	As a student, I want my selected modules, class hours and free time to be saved for the next session, so that I do not have to enter everything again every week.
 #### Assigned to :
