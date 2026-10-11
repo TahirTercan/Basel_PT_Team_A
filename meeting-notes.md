@@ -36,6 +36,15 @@ Let’s aim for 29. Nov.
 - think of functions
 - update your user story based on the feedback of lecturer
 
+## Meeting Notes 11.10.2026 - Meeting #3
+
+### Done
+- finished user stories based on feedback
+- applied the template from Pizza example
+
+### To do until 18.10
+- work on the acceptance criteria and the logic
+
 ## How we collaborate
 - MS Teams
 - Whatsapp
