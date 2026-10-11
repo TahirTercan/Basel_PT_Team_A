@@ -1,0 +1,5 @@
+1. Mathematics_1; 3; Think logically
+2. Statistics_1; 3; Decrypt data, get insights
+3. Principles_of_Management; 6; Recognize organizational structures, shape and manage compagnies
+4. Programming_Fundations; 6; Gain an overall view, get to know key technologies
+5. Digital_Business; 6; Learn to code, discover the world of 0s and 1s
