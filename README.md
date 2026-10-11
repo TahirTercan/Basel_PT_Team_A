@@ -31,7 +31,7 @@ Study Planner solves the part of the problem where the weekly self-study hours a
 --> Marine
 #### Acceptance criteria :
 The assesment modules list, their ECTS and descritpion are diplayed when option 1 in the main menu.
-Each module is shown on its own line in the format <No>. <Name of the module> - <number of ECTS> : <description>.
+Each module is shown on its own line in the format "Number. Name of the module - number of ECTS : description".
 The displayed list starts at 1. and follows the order in modules.txt
 #### Example :
 **Given** modules.txt contains the five assesment modules, **when** the list is diplayed, **then** five line are shown.
@@ -43,9 +43,9 @@ The displayed list starts at 1. and follows the order in modules.txt
 #### Assigned to :
 --> Marine
 #### Acceptance criteria :
-The list a modules with their associated number is displayed to allow the student to know with number should be selected depending on which class is taken, in the format <No>. <Name of the module>, when selecting option 2 in the main menu.
+The list a modules with their associated number is displayed to allow the student to know with number should be selected depending on which class is taken, in the format "Number. Name of the module", when selecting option 2 in the main menu.
 The programm will ask which module should be added to the personalised selection.
-If the selection is done, the calculation of the overall hours of the selected modules will be displayed. Each line will display one module and its associated overall hours in the format <No>. <Name of the module> - <number of ECTS> ECTS : <Overall hours for the semester> hours for this module.
+If the selection is done, the calculation of the overall hours of the selected modules will be displayed. Each line will display one module and its associated overall hours in the format "Number. Name of the module - Number of ECTS : Overall hours for the semester".
 #### Example :
 **Given** the selected modules are 1 and 2,**when** the selection is done, **then** the calculated overall hours for both of those modules will be displayed, eg :
 1. Mathematics_1 - 3 ECTS : 90 hours overall for this module.
