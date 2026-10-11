@@ -45,114 +45,85 @@ All prices are in Swiss francs (CHF). The examples use the following menu from `
 | 5 | Diavola | Large | CHF 17.50 |
 
 
-
-## US-1 : List of the assesment modules
-### As a **student**, **I want** to see a numbered list of the five assesment modules of my programm with their ECTS and a short description of each of them, **so that** I can have an overview of the modules of the first semester without looking them up somewhere else. 
-#### Assigned to :
---> Marine
-#### Acceptance criteria :
+---
+#### US-1 : List of the assesment modules
+**As a** student, **I want** to see a numbered list of the five assesment modules of my programm with their ECTS and a short description of each of them, **so that** I can have an overview of the modules of the first semester without looking them up somewhere else. 
+**Acceptance criteria**
 The assesment modules list, their ECTS and descritpion are diplayed when option 1 in the main menu.
 Each module is shown on its own line in the format "Number. Name of the module - number of ECTS : description".
 The displayed list starts at 1. and follows the order in modules.txt
-#### Example :
 **Given** modules.txt contains the five assesment modules, **when** the list is diplayed, **then** five line are shown.
-#### Edge cases :
 **However, given**   , **then**   .
 
-## US-2 : Select modules to calculate overall hours for each 
-### As a **student**, **I want** to add modules from the list to my selection, **so that** the calculated overall hours for the whole semester to match my own.
-#### Assigned to :
---> Marine
-#### Acceptance criteria :
+---
+#### US-2: Select modules to calculate overall hours for each 
+**As a** student, **I want** to add modules from the list to my selection, **so that** the calculated overall hours for the whole semester to match my own.
+**Acceptance criteria**
 The list a modules with their associated number is displayed to allow the student to know with number should be selected depending on which class is taken, in the format "Number. Name of the module", when selecting option 2 in the main menu.
 The programm will ask which module should be added to the personalised selection.
 If the selection is done, the calculation of the overall hours of the selected modules will be displayed. Each line will display one module and its associated overall hours in the format "Number. Name of the module - Number of ECTS : Overall hours for the semester".
-#### Example :
 **Given** the selected modules are 1 and 2,**when** the selection is done, **then** the calculated overall hours for both of those modules will be displayed, eg :
 1. Mathematics_1 - 3 ECTS : 90 hours overall for this module.
 2. Statistics_1 - 3 ECTS : 90 hours overall for this module.
-#### Edge cases :
 **However, given** a number is not an option in the list,  **then** the message "This module doesn't exist." will be displayed and the selecting question will be asked again.
 **However, given** a number is already selected, **then** the message "The module is already selected." will be displayed and the selecting question will be asked again.
 **However, given** the selection comprise every possible modules, **then** the messsage "All modules are already selected!" will be displayed.
 
 ---
+#### US-3: Remove a module 
+**As a** student, **I want** to remove a selected module, **so that** I can correct a wrong entry without re-entering everything again. 
+**Acceptance criteria**
 
-### 3. As a student, I want to remove a selected module, so that I can correct a wrong entry without re-entering everything again. 
-#### Assigned to :
---> Tahir
-#### Acceptance criteria :
-
-#### Example :
-
-#### Edge cases :
-
----
-
-### 4. As a student, I want to enter my class hours per week and my personal experience for each selected module, so that my self-study hours represents my personal starting point.
-#### Assigned to :
---> Tahir
-#### Acceptance criteria :
-
-#### Example :
-
-#### Edge cases :
-
----
-
-## US-5: View Self-Study Hours per Module and Week. 
-### As a **student**, **I want** to see how many hours of self-study each module requires per semester and per week, **so that** I can plan my week realistically. 
-#### Assigned to :
---> Marcela
-#### Acceptance criteria :
-
-#### Example :
-
-#### Edge cases :
-
----
-
-## US-6: Enter Weekly Availability to Assess Self-Study Time.
-### As a **student**, **I want** to enter my free hours for each day of the week, **so that** I can see whether my free time is enough for my self-study.
-#### Assigned to :
---> Marcela
-#### Acceptance criteria :
-
-#### Example :
-
-#### Edge cases :
-
-## US-7: Generate a Personalized Weekly Study Plan.	
-### As a **student**, **I want** to get a study plan that distributes my self-study hours over my free hours, **so that** I need less time to plan my week.
-#### Assigned to :
---> Marcela
-#### Acceptance criteria :
-
-#### Example :
-
-#### Edge cases :
-
-## US-8 : Weekly record of studied hours
-### As a **student**, **I want** to keep a weekly record of the hours I actually studied for each of my selected module, **so that** I can see if I am falling behind over the weeks and if so from how much.
-#### Assigned to :
---> Marine
-#### Acceptance criteria :
-When the option 8 is selected in the main menu, the list of modules from the personalised selection will be displayed.
-#### Example :
 **Given**   , **when**   , **then**   .
-#### Edge cases :
 **However, given**   , **then**   .
 
 ---
+#### US-4: Enter class hours and personal experience
+**As a** student, **I want** to enter my class hours per week and my personal experience for each selected module, **so that** my self-study hours represents my personal starting point.
+**Acceptance criteria**
 
-### 9. 	As a student, I want to export a bar chart of my planned and actual study hours per module, so that I can see directly in which module I am behind.
-#### Assigned to :
---> Tahir
-#### Acceptance criteria :
+**Given**   , **when**   , **then**   .
+**However, given**   , **then**   .
 
-#### Example :
+---
+#### US-5: View Self-Study Hours per Module and Week
+**As a** student, **I want** to see how many hours of self-study each module requires per semester and per week, **so that** I can plan my week realistically. 
+**Acceptance criteria**
 
-#### Edge cases :
+**Given**   , **when**   , **then**   .
+**However, given**   , **then**   .
+
+---
+#### US-6: Enter Weekly availability to assess self-study time
+**As a** student, **I want** to enter my free hours for each day of the week, **so that** I can see whether my free time is enough for my self-study.
+**Acceptance criteria**
+
+**Given**   , **when**   , **then**   .
+**However, given**   , **then**   .
+
+---
+#### US-7: Generate a Personalized Weekly Study Plan
+**As a** student, **I want** to get a study plan that distributes my self-study hours over my free hours, **so that** I need less time to plan my week.
+**Acceptance criteria**
+
+**Given**   , **when**   , **then**   .
+**However, given**   , **then**   .
+
+---
+#### US-8: Weekly record of studied hours
+**As a** student, **I want** to keep a weekly record of the hours I actually studied for each of my selected module, **so that** I can see if I am falling behind over the weeks and if so from how much.
+**Acceptance criteria**
+When the option 8 is selected in the main menu, the list of modules from the personalised selection will be displayed.
+**Given**   , **when**   , **then**   .
+**However, given**   , **then**   .
+
+---
+#### US-9: Export bar chart
+**As a** student, **I want** to export a bar chart of my planned and actual study hours per module, **so that** I can see directly in which module I am behind.
+**Acceptance criteria**
+
+**Given**   , **when**   , **then**   .
+**However, given**   , **then**   .
 
 ---
 
@@ -273,9 +244,9 @@ These libraries are part of the Python standard library, so no external installa
 
 | Name       | Contribution                                 |
 |------------|----------------------------------------------|
-| Student A  | Menu reading (file input) and displaying menu|
-| Student B  | Order logic and data validation              |
-| Student C  | Invoice generation (file output) and slides  |
+| Marine     | US-1, US-2 and US-8                          |
+| Marcela    | US-5, US-6 and US-7                          |
+| Tahir      | US-3, US-4 and US-9                          |
 
 
 ## 🤝 Contributing
