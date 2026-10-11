@@ -1,28 +1,49 @@
-# Study Planner
+# Study Planner (Console)
 
-## A simple application to help part-time students organize their study time.
+## 📝 Analysis
 
-## The problem:
+**Problem**
 Part-time students (who) experiences difficulty planning how many hours of self study their 
 modules require per week (what), when they plan their week alongside their job and FH 
 lectures (where) resulting in too little time for self-study and fall behind (why).​
 
-## Project Goal:
-Make the weekly self-study planning of part-time students more efficient and more effective: 
-less time needed for planning and fewer weeks with too little self-study.
 
-## Scenario ## 
+**Scenario**
 
 Study Planner solves the part of the problem where the weekly self-study hours are worked out and distributed: a student selects the modules of the semester, enters the class hours and the free hours of the week, and gets the self-study hours per module and a study plan for the week. 
 
-## User Roles ## 
+### 👤 User Roles
 
 | Role | Description |
 |------|-------------|
 | **Student** | A part-time BSc BIT student who works alongside the degree programme and plans the weekly self-study for the modules of the current semester. |
 
 
-## User stories:
+### 📖 User Stories
+
+> 🚧 **How to write a good user story**
+>
+> - Use the scheme **"As a *&lt;role&gt;*, I want *&lt;capability&gt;*, so that *&lt;benefit&gt;*."**
+>   The benefit ("so that …") explains *why* the story is valuable. If you cannot name a benefit, question whether the story is needed.
+> - A story consists of three parts, the "three Cs": the **Card** (the short sentence), the **Conversation** (the details discussed within the team), and the **Confirmation** (the acceptance criteria, which show when the story is done).
+> - Check each story against **INVEST**: **I**ndependent, **N**egotiable, **V**aluable, **E**stimable, **S**mall, **T**estable.
+> - **Acceptance criteria** must be *specific* and *testable*. Use concrete values (e.g., "CHF 25.00", "two decimal places") and avoid vague words such as "fast", "easy", "correct", or "user-friendly". A good criterion can be turned directly into a test case with an input and an expected output.
+> - Write acceptance criteria either as a **checklist** of observable rules or in the **Given–When–Then** structure:
+>   *Given* a starting situation, *when* an action happens, *then* a specific, observable result occurs.
+> - Include at least one criterion for the **normal case** and one for an **edge case or invalid input** (e.g., a quantity of 0, an empty order, a missing file).
+>
+> 💡 The stories below are examples for PizzaRP. Replace them with the stories of your own project.
+
+All prices are in Swiss francs (CHF). The examples use the following menu from `menu.txt`:
+
+| No. | Pizza | Size | Unit price |
+|-----|-------|------|-----------:|
+| 1 | Margherita | Medium | CHF 12.50 |
+| 2 | Salami | Large | CHF 15.00 |
+| 3 | Funghi | Small | CHF 9.00 |
+| 4 | Hawaii | Medium | CHF 14.00 |
+| 5 | Diavola | Large | CHF 17.50 |
+
 
 
 ### 1. As a student, I want to see a list of all modules of my degree programme with their ECTS, so that I can choose my modules without typing names and ECTS and have an overview. 
@@ -34,6 +55,7 @@ Study Planner solves the part of the problem where the weekly self-study hours a
 
 #### Edge cases :
 
+---
 
 ### 2. As a student, I want to add modules from the list to my selection, so that the calculated study hours match my own semester.
 #### Assigned to :
@@ -44,7 +66,9 @@ Study Planner solves the part of the problem where the weekly self-study hours a
 
 #### Edge cases :
 
-### 3. As a student, I want to remove a selected module, so that I can correct a wrong entry without re-entering everything. 
+---
+
+### 3. As a student, I want to remove a selected module, so that I can correct a wrong entry without re-entering everything again. 
 #### Assigned to :
 --> Tahir
 #### Acceptance criteria :
@@ -53,7 +77,9 @@ Study Planner solves the part of the problem where the weekly self-study hours a
 
 #### Edge cases :
 
-### 4. As a student, I want to enter my class hours per week for each selected module, so that I do not plan my time in class twice.
+---
+
+### 4. As a student, I want to enter my class hours per week and my personal experience for each selected module, so that my self-study hours represents my personal starting point.
 #### Assigned to :
 --> Tahir
 #### Acceptance criteria :
@@ -61,6 +87,8 @@ Study Planner solves the part of the problem where the weekly self-study hours a
 #### Example :
 
 #### Edge cases :
+
+---
 
 ## US-5: View Self-Study Hours per Module and Week. 
 ### As a **student**, **I want** to see how many hours of self-study each module requires per semester and per week, **so that** I can plan my week realistically. 
@@ -72,6 +100,8 @@ Study Planner solves the part of the problem where the weekly self-study hours a
 
 #### Edge cases :
 
+---
+
 ## US-6: Enter Weekly Availability to Assess Self-Study Time.
 ### As a **student**, **I want** to enter my free hours for each day of the week, **so that** I can see whether my free time is enough for my self-study.
 #### Assigned to :
@@ -81,6 +111,8 @@ Study Planner solves the part of the problem where the weekly self-study hours a
 #### Example :
 
 #### Edge cases :
+
+---
 
 ## US7: Generate a Personalized Weekly Study Plan.	
 ### As a **student**, **I want** to get a study plan that distributes my self-study hours over my free hours, **so that** I need less time to plan my week.
@@ -92,6 +124,8 @@ Study Planner solves the part of the problem where the weekly self-study hours a
 
 #### Edge cases :
 
+---
+
 ### 8. 	As a student, I want to mark study sessions as completed, so that I can see whether I am falling behind.
 #### Assigned to :
 --> Marine
@@ -101,7 +135,9 @@ Study Planner solves the part of the problem where the weekly self-study hours a
 
 #### Edge cases :
 
-### 9. 	As a student, I want my selected modules, class hours and free time to be saved for the next session, so that I do not have to enter everything again every week.
+---
+
+### 9. 	As a student, I want to export a bar chart of my planned and actual study hours per module, so that I can see directly in which module I am behind.
 #### Assigned to :
 --> Tahir
 #### Acceptance criteria :
@@ -110,6 +146,143 @@ Study Planner solves the part of the problem where the weekly self-study hours a
 
 #### Edge cases :
 
+---
+
+**Use cases:**
+
+## ✅ Project Requirements
+
+---
+
+### 1. Interactive App (Console Input)
+
+---
+
+### 2. Data Validation
+
+The application validates all user input to ensure data integrity and a smooth user experience. This is implemented in `main-invoice.py` as follows:
+
+- **Menu selection:** When the user enters a pizza number, the program checks if the input is a digit and within the valid menu range:
+	```python
+	if not choice.isdigit() or not (1 <= int(choice) <= len(menu)):
+			print("⚠️ Invalid choice.")
+			continue
+	```
+	This ensures only valid menu items can be ordered.
+
+- **Quantity input:** After a pizza is selected, the program asks for the quantity until a whole number of at least 1 is entered:
+	```python
+	if not quantity.isdigit() or int(quantity) < 1:
+			print("⚠️ Invalid quantity.")
+			continue
+	```
+	This rejects `0`, negative numbers, decimal numbers, and text.
+
+- **Menu file validation:** When reading the menu file, the program checks for valid price values and skips invalid lines:
+	```python
+	try:
+			menu.append({"name": name, "size": size, "price": float(price)})
+	except ValueError:
+			print(f"⚠️ Skipping invalid line: {line.strip()}")
+	```
+
+- **Main menu options:** The main menu checks for valid options and handles invalid choices gracefully:
+	```python
+	else:
+			print("⚠️ Invalid choice.")
+	```
+
+These checks prevent crashes and guide the user to provide correct input, matching the validation requirements described in the project guidelines.
+
+---
+
+---
+
+
+
+### 3. File Processing
+
+The application reads and writes data using files:
+
+- **Input file:** `menu.txt` — Contains the pizza menu, one item per line in the format `PizzaName;Size;Price`.
+	- Example:
+		```
+		Margherita;Medium;12.50
+		Salami;Large;15.00
+		Funghi;Small;9.00
+		```
+	- The application reads this file at startup to display available pizzas.
+
+- **Output file:** `invoice_001.txt` (and similar) — Generated when an order is completed. Contains a summary of the order, including items, quantities, prices, discounts, and totals.
+	- Example:
+		```
+		🍕 PIZZA RP INVOICE
+		---------------------
+		3x Diavola (Large) - CHF 52.50
+		---------------------
+		Discount: 10% discount (-CHF 5.25)
+		TOTAL: CHF 47.25
+		```
+		- The output file serves as a record for both the user and the pizzeria, ensuring accuracy and transparency.
+
+## ⚙️ Implementation
+
+### Technology
+- Python 3.x
+- Environment: GitHub Codespaces
+- No external libraries
+
+### 📂 Repository Structure
+```text
+PizzaRP/
+├── main.py             # main program logic (console application)
+├── menu.txt            # pizza menu (input data file)
+├── invoice_001.txt     # example of a generated invoice (output file)
+├── docs/               # optional screenshots or project documentation
+└── README.md           # project description and milestones
+```
+
+### How to Run
+> 🚧 Adjust if needed.
+1. Open the repository in **GitHub Codespaces**
+2. Open the **Terminal**
+3. Run:
+	```bash
+	python3 main.py
+	```
+
+### Libraries Used
+
+- `os`: Used for file and path operations, such as checking if the menu file exists and creating new files.
+- `glob`: Used to find all invoice files matching a pattern (e.g., `invoice_*.txt`) to determine the next invoice number.
+
+These libraries are part of the Python standard library, so no external installation is required. They were chosen for their simplicity and effectiveness in handling file management tasks in a console application.
+
+
+## 👥 Team & Contributions
+
+> 🚧 Fill in the names of all team members and describe their individual contributions below. Each student should be responsible for at least one part of the project.
+
+| Name       | Contribution                                 |
+|------------|----------------------------------------------|
+| Student A  | Menu reading (file input) and displaying menu|
+| Student B  | Order logic and data validation              |
+| Student C  | Invoice generation (file output) and slides  |
+
+
+## 🤝 Contributing
+
+> 🚧 This is a template repository for student projects.  
+> 🚧 Do not change this section in your final submission.
+
+- Use this repository as a starting point by importing it into your own GitHub account.  
+- Work only within your own copy — do not push to the original template.  
+- Commit regularly to track your progress.
+
+## 📝 License
+
+This project is provided for **educational use only** as part of the Programming Foundations module.  
+[MIT License](LICENSE)
 
 
 ## Our assumptions and sources
