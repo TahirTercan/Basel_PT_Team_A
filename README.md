@@ -57,7 +57,7 @@ The displayed list starts at 1. and follows the order in modules.txt
 
 ---
 #### US-2: Select modules to calculate overall hours for each 
-**As a** student, **I want** to add modules from the list to my selection, **so that** the calculated overall hours for the whole semester to match my own.
+**As a** student, **I want** to add modules from the list to my selection, **so that** I can calculate the total semester workload for the modules I am taking.
 **Acceptance criteria**
 The list a modules with their associated number is displayed to allow the student to know with number should be selected depending on which class is taken, in the format "Number. Name of the module", when selecting option 2 in the main menu.
 The programm will ask which module should be added to the personalised selection.
@@ -79,11 +79,16 @@ If the selection is done, the calculation of the overall hours of the selected m
 
 ---
 #### US-4: Enter class hours and personal experience
-**As a** student, **I want** to enter my class hours per week and my personal experience for each selected module, **so that** my self-study hours represents my personal starting point.
+**As a** student, **I want** to enter my class hours per week and my personal experience for each selected module, between no previous experience, intermediate or high, **so that** my self-study hours represents my personal starting point.
 **Acceptance criteria**
+For no previous experience = 0%
+For intermediate experience = 30%
+For high experience = 60%
 
-**Given**   , **when**   , **then**   .
-**However, given**   , **then**   .
+Self study hours for Math module (3ECTS) = ((30hrs * 3 ECTS) - class hours) * (1 - experience %) 
+
+**Given** Math represents 3 ECTS and 19.5 hours of calss, **when** the student input intermediate experience, **then** the self study hours will be 49.35 hours.
+**However, given** no modules were selected previously, **then** the program will ask the student to come back to the main menu and select the module on the option 2 before comming back.
 
 ---
 #### US-5: View Self-Study Hours per Module and Week
@@ -115,11 +120,11 @@ If the selection is done, the calculation of the overall hours of the selected m
 **Acceptance criteria**
 When the option 8 is selected in the main menu, the list of modules from the personalised selection will be displayed.
 **Given**   , **when**   , **then**   .
-**However, given**   , **then**   .
+**However, given** no modules were selected, **then** the program will ask the student to come to the main menu and select number 2.
 
 ---
-#### US-9: Export bar chart
-**As a** student, **I want** to export a bar chart of my planned and actual study hours per module, **so that** I can see directly in which module I am behind.
+#### US-9: Bar chart export from beginning of semester until given week.
+**As a** student, **I want** to export a bar chart of my planned and actual study hours per module per week, **so that** I can see directly in which module I am behind.
 **Acceptance criteria**
 
 **Given**   , **when**   , **then**   .
