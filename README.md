@@ -21,44 +21,31 @@ Study Planner solves the part of the problem where the weekly self-study hours a
 
 ### 📖 User Stories
 
-> 🚧 **How to write a good user story**
->
-> - Use the scheme **"As a *&lt;role&gt;*, I want *&lt;capability&gt;*, so that *&lt;benefit&gt;*."**
->   The benefit ("so that …") explains *why* the story is valuable. If you cannot name a benefit, question whether the story is needed.
-> - A story consists of three parts, the "three Cs": the **Card** (the short sentence), the **Conversation** (the details discussed within the team), and the **Confirmation** (the acceptance criteria, which show when the story is done).
-> - Check each story against **INVEST**: **I**ndependent, **N**egotiable, **V**aluable, **E**stimable, **S**mall, **T**estable.
-> - **Acceptance criteria** must be *specific* and *testable*. Use concrete values (e.g., "CHF 25.00", "two decimal places") and avoid vague words such as "fast", "easy", "correct", or "user-friendly". A good criterion can be turned directly into a test case with an input and an expected output.
-> - Write acceptance criteria either as a **checklist** of observable rules or in the **Given–When–Then** structure:
->   *Given* a starting situation, *when* an action happens, *then* a specific, observable result occurs.
-> - Include at least one criterion for the **normal case** and one for an **edge case or invalid input** (e.g., a quantity of 0, an empty order, a missing file).
->
-> 💡 The stories below are examples for PizzaRP. Replace them with the stories of your own project.
-
-All prices are in Swiss francs (CHF). The examples use the following menu from `menu.txt`:
-
-| No. | Pizza | Size | Unit price |
-|-----|-------|------|-----------:|
-| 1 | Margherita | Medium | CHF 12.50 |
-| 2 | Salami | Large | CHF 15.00 |
-| 3 | Funghi | Small | CHF 9.00 |
-| 4 | Hawaii | Medium | CHF 14.00 |
-| 5 | Diavola | Large | CHF 17.50 |
-
-
 ---
 #### US-1 : List of the assesment modules
 **As a** student, **I want** to see a numbered list of the five assesment modules of my programm with their ECTS and a short description of each of them, **so that** I can have an overview of the modules of the first semester without looking them up somewhere else. 
+
 **Acceptance criteria**
+<<<<<<< HEAD
 The assesment modules list, their ECTS and descritpion are displayed when option 1 is selected in the main menu.
 Each module is shown on its own line in the format "Number. Name of the module - number of ECTS : description".
 The displayed list starts at 1. and follows the order from 1 to 5 / modules.txt #WATCH OUT
 **Given** modules.txt contains the five assesment modules, **when** the list is diplayed, **then** five line are shown.
 **However, given** a line in modules.txt does not have the format “Number. Name; ECTS; description”, **then** this line is skipped with the message “Skipping invalid line: ...” and the other modules are still displayed.
+=======
+- The assesment modules list, their ECTS and descritpion are diplayed when option 1 in the main menu.
+- Each module is shown on its own line in the format "Number Name of the module - number of ECTS : description".
+- The displayed list starts at 1. and follows the order in modules.txt
+- **Given** modules.txt contains the five assesment modules, **when** the list is diplayed, **then** five line are shown.
+- **However, given**   , **then**   .
+>>>>>>> d78e23fe9a1d088a73d25ae7321265967e7eee85
 
 ---
 #### US-2: Select modules to calculate overall hours for each 
 **As a** student, **I want** to add modules from the list to my selection, **so that** I can calculate the total semester workload for the modules I am taking.
+
 **Acceptance criteria**
+<<<<<<< HEAD
 The list of modules with their associated number is displayed to allow the student to know which number should be selected depending on which class is taken, in the format "Number. Name of the module", when selecting option 2 in the main menu.
 The programm will ask which module should be added to the personalised selection.
 If the selection is done, the calculation of the overall hours of the selected modules will be displayed. Each line will display one module and its associated overall hours in the format "Number. Name of the module - Number of ECTS : Overall hours for the semester".
@@ -68,21 +55,39 @@ If the selection is done, the calculation of the overall hours of the selected m
 **However, given** a number is not an option in the list,  **then** the message "This module doesn't exist." will be displayed and the selecting question will be asked again.
 **However, given** a number is already selected, **then** the message "The module is already selected." will be displayed and the selecting question will be asked again.
 **However, given** the selection comprise every possible modules, **then** the messsage "All modules are already selected!" will be displayed.
+=======
+- The list of modules with their associated number is displayed to allow the student to know which number should be selected depending on which class is taken, in the format "Number Name of the module", when selecting option 2 in the main menu.
+- The programm will ask which module should be added to the personalised selection.
+- If the selection is done, the calculation of the overall hours of the selected modules will be displayed. Each line will display one module and its associated overall hours in the format "Number Name of the module - Number of ECTS : Overall hours for the semester".
+- **Given** the module 1 Mathematics_1 which represents 3 ECTS,**when** selected, **then** the overall hours for this module will be displayed, i.e. 90 hours.
+- **However, given** a number is not an option in the list,  **then** the message "Error : select a number for the list." will be displayed and the selecting question will be asked again.
+- **However, given** a number is already selected, **then** the message "Error : the module is already selected." will be displayed and the selecting question will be asked again.
+>>>>>>> d78e23fe9a1d088a73d25ae7321265967e7eee85
 
 ---
 #### US-3: Remove a module 
 **As a** student, **I want** to remove a selected module, **so that** I can correct a wrong entry without re-entering everything again. 
+<<<<<<< HEAD
 When option 3 is selected in the main menu, the selected modules are displayed as a numbered list in the format "Number. Name of the module", followed by the question "Number of the module to remove (or done):".
 A valid input is a number from this list. After removing, the message "Removed: Name of the module" and the remaining selection are displayed, and the question is asked again. Entering "done" returns to the main menu.
 The class hours and the experience of a removed module are removed as well, so US-5 no longer counts it.
 **Given** the selection is 1. Mathematics_1 and 2. Statistics_1, **when** the student enters 2, **then** the message "Removed: Statistics_1" and the remaining selection "1. Mathematics_1" are displayed, and the question is asked again.
 **However, given** the student enters a number that is not in the list for example 3 or 0, text instead of a number, or nothing, **then** the message "This module is not in your selection." is displayed and the question "Number of the module to remove (or done):" is asked again.
 
+=======
+
+**Acceptance criteria**
+- 
+- **Given**   , **when**   , **then**   .
+- **However, given**   , **then**   .
+>>>>>>> d78e23fe9a1d088a73d25ae7321265967e7eee85
 
 ---
 #### US-4: Enter class hours and personal experience
 **As a** student, **I want** to enter my class hours per week and my personal experience for each selected module, between no previous experience, intermediate or high, **so that** my self-study hours represents my personal starting point.
+
 **Acceptance criteria**
+<<<<<<< HEAD
 When option 4 is selected in the main menu, the program asks two questions for each selected module: "Name of the module - class hours per week:" and "Name of the module - experience (1 = no previous experience, 2 = intermediate, 3 = high):".
 Class hours are a number of 0 or more. The class hours per semester are the class hours per week times 13 class weeks. The class hours per semester must be smaller than the total workload of the module (ECTS x 30 hours). Otherwise no time would be left for self-study.
 The experience is entered as the number 1, 2 or 3. It reduces the self-study hours calculated in US-5:
@@ -94,41 +99,56 @@ After both inputs, the line "Name of the module: class hours per week, class hou
 
 **Given** Math represents 3 ECTS and 19.5 hours of class, **when** the student input intermediate experience, **then** the self study hours will be 49.35 hours.
 **However, given** no modules were selected previously, **then** the message “No modules selected. Please add modules with option 2.” is displayed and the main menu is shown again.
+=======
+- For no previous experience = 0%
+- For intermediate experience = 30%
+- For high experience = 60%
+- Self study hours for Math module (3ECTS) = ((30hrs * 3 ECTS) - class hours) * (1 - experience %) 
+- **Given** Math represents 3 ECTS and 19.5 hours of class, **when** the student input intermediate experience, **then** the self study hours will be 49.35 hours.
+- **However, given** no modules were selected previously, **then** the program will ask the student to come back to the main menu and select the module on the option 2 before comming back.
+>>>>>>> d78e23fe9a1d088a73d25ae7321265967e7eee85
 
 ---
 #### US-5: View Self-Study Hours per Module and Week
 **As a** student, **I want** to see how many hours of self-study each module requires per semester and per week, **so that** I can plan my week realistically. 
-**Acceptance criteria**
 
-**Given**   , **when**   , **then**   .
-**However, given**   , **then**   .
+**Acceptance criteria**
+- 
+- **Given**   , **when**   , **then**   .
+- **However, given**   , **then**   .
 
 ---
 #### US-6: Enter Weekly availability to assess self-study time
 **As a** student, **I want** to enter my free hours for each day of the week, **so that** I can see whether my free time is enough for my self-study.
-**Acceptance criteria**
 
-**Given**   , **when**   , **then**   .
-**However, given**   , **then**   .
+**Acceptance criteria**
+- 
+- **Given**   , **when**   , **then**   .
+- **However, given**   , **then**   .
 
 ---
 #### US-7: Generate a Personalized Weekly Study Plan
 **As a** student, **I want** to get a study plan that distributes my self-study hours over my free hours, **so that** I need less time to plan my week.
-**Acceptance criteria**
 
-**Given**   , **when**   , **then**   .
-**However, given**   , **then**   .
+**Acceptance criteria**
+- 
+- **Given**   , **when**   , **then**   .
+- **However, given**   , **then**   .
 
 ---
 #### US-8: Weekly record of studied hours
 **As a** student, **I want** to keep a weekly record of the hours I actually studied for each of my selected module, **so that** I can see if I am falling behind over the weeks and if so from how much.
+
 **Acceptance criteria**
-When the option 8 is selected in the main menu, the list of modules from the personalised selection will be displayed.
-**Given**   , **when**   , **then**   .
-**However, given** no modules were selected, **then** the program will ask the student to come to the main menu and select number 2.
+- When the option 8 is selected in the main menu, the list of modules from the personalised selection will be displayed.
+- The number of the week and if the self-study is finished for said week will be asked of the student. Only if the studying is done, will the student be able to recorded how many hours of self-study was done per module for the chosen week.
+- The amount of selt-study hours the students should have invested per module per week will be displayed, as well as the previously recorded self-studied hours for the week, allowing the student to compare the two and see if the invested time was sufficient or not.
+- **Given** the personalised selection of module is 1 Mathematics_1 and the student selected intermediate experience in the module, **when** the week selected is week 1, the student is all done with the self-study this week and the recorded self-study hours for this module are 2 hours, **then** the student will see that the self study hours invested for week 1 were insufficent.
+- **However, given** no modules were selected, **then** the program will ask the student to come to the main menu and select number 2.
 
 ---
 #### US-9: Bar chart export from beginning of semester until given week.
+<<<<<<< HEAD
 **As a** student, **I want** to export a bar chart of my planned and actual study hours per module from the beginning of the semester until a given week, **so that** I can see directly in which module I am behind.
 **Acceptance criteria**
 When option 9 is selected in the main menu, the program asks "Until which week? (1 to N):", where N is the last week recorded in US-8.
@@ -136,13 +156,41 @@ The chart compares, for each selected module, the planned self-study hours (hour
 **Given**   , **when**   , **then**   .
 **However, given** modules are selected but no week is recorded yet, **then** the message "No weeks recorded yet." is displayed and no file is created.
 **However, given** no modules were selected previously, **then** the message "No modules selected. Please add modules with option 2." is displayed and the main menu is shown again.
+=======
+**As a** student, **I want** to export a bar chart of my planned and actual study hours per module per week, **so that** I can see directly in which module I am behind.
+
+**Acceptance criteria**
+- 
+- **Given**   , **when**   , **then**   .
+- **However, given**   , **then**   .
+
+>>>>>>> d78e23fe9a1d088a73d25ae7321265967e7eee85
 ---
 
 **Use cases:**
 
-## ✅ Project Requirements
+Show Assessement modules (from modules.txt)
+Create personalised selection (choose modules)
+Generate personalised weekly study plan
+Print Bar chart (to ----.txt)
 
+## ✅ Project Requirements
+Each app must meet the following three criteria in order to be accepted :
+
+1. Interactive app (console input)
+2. Data validation (input checking)
+3. File processing (read/write)
 ---
+The application interacts with the user via the console. Users can:
+- View the assessement modules, their ECTS and a short description
+- Select modules that are taken to create a personalised selection
+- Remove a module from this selection
+- Enter the amount of weekly hours of class per module and select their personnal experience
+- View how many hours of self-study should be invested per week and per module
+- Enter weekly availability to compare with the amount of self-study that should be invested
+- Generate a personalised weekly study plan
+- Record self-studied hours on a weekly basis
+- Create a bar chart export to compare should be and done study hours
 
 ### 1. Interactive App (Console Input)
 
@@ -194,26 +242,20 @@ These checks prevent crashes and guide the user to provide correct input, matchi
 
 The application reads and writes data using files:
 
-- **Input file:** `menu.txt` — Contains the pizza menu, one item per line in the format `PizzaName;Size;Price`.
+- **Input file:** `modules.txt` — Contains the assessement modules, one item per line in the format `ModuleName;ECTS;Description`.
 	- Example:
 		```
-		Margherita;Medium;12.50
-		Salami;Large;15.00
-		Funghi;Small;9.00
+		Mathematics_1; 3; Think logically
+		Statistics_1; 3; Decrypt data, get insights
 		```
-	- The application reads this file at startup to display available pizzas.
+	- The application reads this file at startup to display the assessement modules.
 
-- **Output file:** `invoice_001.txt` (and similar) — Generated when an order is completed. Contains a summary of the order, including items, quantities, prices, discounts, and totals.
+- **Output file:** ` ` (and similar) — Generated when the weekly self-study hours are recorded. Contains the number of self-study hours per selected module per week and a total of said hours for the week.
 	- Example:
 		```
-		🍕 PIZZA RP INVOICE
-		---------------------
-		3x Diavola (Large) - CHF 52.50
-		---------------------
-		Discount: 10% discount (-CHF 5.25)
-		TOTAL: CHF 47.25
+		
 		```
-		- The output file serves as a record for both the user and the pizzeria, ensuring accuracy and transparency.
+		- The output file serves as a record for the user, ensuring a following on self-studied hours during the semester.
 
 ## ⚙️ Implementation
 
@@ -224,16 +266,15 @@ The application reads and writes data using files:
 
 ### 📂 Repository Structure
 ```text
-PizzaRP/
+Basel_PT_Team_A/
 ├── main.py             # main program logic (console application)
-├── menu.txt            # pizza menu (input data file)
-├── invoice_001.txt     # example of a generated invoice (output file)
-├── docs/               # optional screenshots or project documentation
+├── modules.txt         # assessement modules (input data file)
+├── ---.txt             # example of a generated recorded self-study hours (output file)
+├── meeting-notes.md    # our notes, deadlines and objectives for the duration of the project
 └── README.md           # project description and milestones
 ```
 
 ### How to Run
-> 🚧 Adjust if needed.
 1. Open the repository in **GitHub Codespaces**
 2. Open the **Terminal**
 3. Run:
@@ -251,8 +292,6 @@ These libraries are part of the Python standard library, so no external installa
 
 ## 👥 Team & Contributions
 
-> 🚧 Fill in the names of all team members and describe their individual contributions below. Each student should be responsible for at least one part of the project.
-
 | Name       | Contribution                                 |
 |------------|----------------------------------------------|
 | Marine     | US-1, US-2 and US-8                          |
@@ -262,20 +301,22 @@ These libraries are part of the Python standard library, so no external installa
 
 ## 🤝 Contributing
 
-> 🚧 This is a template repository for student projects.  
-> 🚧 Do not change this section in your final submission.
-
 - Use this repository as a starting point by importing it into your own GitHub account.  
 - Work only within your own copy — do not push to the original template.  
 - Commit regularly to track your progress.
 
-## 📝 License
 
-This project is provided for **educational use only** as part of the Programming Foundations module.  
-[MIT License](LICENSE)
+## 📝 Our assumptions and sources
 
-
-## Our assumptions and sources
 1 ECTS equivalent to approx. 30 hours of work
+
+| No. | Module | ECTS | Description |
+|-----|-------|------|-----------:|
+| 1 | Mathematics_1 | 3 | Think logically |
+| 2 | Statistics_1 | 3 | Decrypt data, get insights |
+| 3 | Principles_of_Management | 6 | Recognize organizational structures, shape and manage compagnies |
+| 4 | Programming_Fundations | 6 | Gain an overall view, get to know key technologies |
+| 5 | Digital_Business | 6 | Learn to code, discover the world of 0s and 1s |
+
 Module weight -> Module overview BSc Business Information Technology part time, URL: https://www.fhnw.ch/++api++/de/wirtschaft/studium/angebot/studiengaenge/media/web_bit_cur25_moduluebersicht_tz.pdf/@@inline-file/file 
 Structure of the year -> "Jahresstruktur 2025 bis FS 2031_Start Curriculum25", URL: https://fhnw365.sharepoint.com/sites/inside-HSW-Stud/Freigegebene%20Dokumente/Forms/AllItems.aspx?csf=1&web=1&e=BOKMeT&CID=edd24bad%2Daca8%2D4a72%2D8ee6%2D47d8fdc24d5f&FolderCTID=0x012000223CD24C15B3F34CBC643E657E20FD95&id=%2Fsites%2Finside%2DHSW%2DStud%2FFreigegebene%20Dokumente%2FTermine%2FDeutsch 
