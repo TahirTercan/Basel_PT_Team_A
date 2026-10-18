@@ -30,9 +30,7 @@ Study Planner solves the part of the problem where the weekly self-study hours a
 - Each module is shown on its own line in the format "Number Name of the module - number of ECTS : description".
 - The displayed list starts at 1. and follows the order in modules.txt
 - **Given** modules.txt contains the five assesment modules, **when** the list is diplayed, **then** five line are shown.
-- **However, given**   , **then**   .
-
-forgot to push last Wednesday(tahir): **However, given** a line in modules.txt does not have the format “Number. Name; ECTS; description”, **then** this line is skipped with the message “Skipping invalid line: ...” and the other modules are still displayed.
+- **However, given** a line in modules.txt does not have the format “Number. Name; ECTS; description”, **then** this line is skipped with the message “Skipping invalid line: ...” and the other modules are still displayed.
 
 ---
 #### US-2: Select modules to calculate overall hours for each 
@@ -49,11 +47,13 @@ forgot to push last Wednesday(tahir): **However, given** a line in modules.txt d
 ---
 #### US-3: Remove a module 
 **As a** student, **I want** to remove a selected module, **so that** I can correct a wrong entry without re-entering everything again. 
-When option 3 is selected in the main menu, the selected modules are displayed as a numbered list in the format "Number. Name of the module", followed by the question "Number of the module to remove (or done):".
-A valid input is a number from this list. After removing, the message "Removed: Name of the module" and the remaining selection are displayed, and the question is asked again. Entering "done" returns to the main menu.
-The class hours and the experience of a removed module are removed as well, so US-5 no longer counts it.
-**Given** the selection is 1. Mathematics_1 and 2. Statistics_1, **when** the student enters 2, **then** the message "Removed: Statistics_1" and the remaining selection "1. Mathematics_1" are displayed, and the question is asked again.
-**However, given** the student enters a number that is not in the list for example 3 or 0, text instead of a number, or nothing, **then** the message "This module is not in your selection." is displayed and the question "Number of the module to remove (or done):" is asked again.
+
+**Acceptance criteria**
+- When option 3 is selected in the main menu, the selected modules are displayed as a numbered list in the format "Number. Name of the module", followed by the question "Number of the module to remove (or done):".
+- A valid input is a number from this list. After removing, the message "Removed: Name of the module" and the remaining selection are displayed, and the question is asked again. Entering "done" returns to the main menu.
+- The class hours and the experience of a removed module are removed as well, so US-5 no longer counts it.
+- **Given** the selection is 1. Mathematics_1 and 2. Statistics_1, **when** the student enters 2, **then** the message "Removed: Statistics_1" and the remaining selection "1. Mathematics_1" are displayed, and the question is asked again.
+- **However, given** the student enters a number that is not in the list for example 3 or 0, text instead of a number, or nothing, **then** the message "This module is not in your selection." is displayed and the question "Number of the module to remove (or done):" is asked again.
 
 
 ---
@@ -61,44 +61,62 @@ The class hours and the experience of a removed module are removed as well, so U
 **As a** student, **I want** to enter my class hours per week and my personal experience for each selected module, between no previous experience, intermediate or high, **so that** my self-study hours represents my personal starting point.
 
 **Acceptance criteria**
-When option 4 is selected in the main menu, the program asks two questions for each selected module: "Name of the module - class hours per week:" and "Name of the module - experience (1 = no previous experience, 2 = intermediate, 3 = high):".
-Class hours are a number of 0 or more. The class hours per semester are the class hours per week times 13 class weeks. The class hours per semester must be smaller than the total workload of the module (ECTS x 30 hours). Otherwise no time would be left for self-study.
-The experience is entered as the number 1, 2 or 3. It reduces the self-study hours calculated in US-5:
-For no previous experience = 0%
-For intermediate experience = 30%
-For high experience = 60%
+- When option 4 is selected in the main menu, the program asks two questions for each selected module: "Name of the module - class hours per week:" and "Name of the module - experience (1 = no previous experience, 2 = intermediate, 3 = high):".
+- Class hours are a number of 0 or more. The class hours per semester are the class hours per week times 13 class weeks. The class hours per semester must be smaller than the total workload of the module (ECTS x 30 hours). Otherwise no time would be left for self-study.
+- The experience is entered as the number 1, 2 or 3. It reduces the self-study hours calculated in US-5:
+	- For no previous experience = 0%
+	- For intermediate experience = 30%
+	- For high experience = 60%
 Self study hours for Math module (3ECTS) = ((30hrs * 3 ECTS) - class hours per semester) * (1 - experience %)
-After both inputs, the line "Name of the module: class hours per week, class hours per semester, experience" is displayed, hours with two decimal places. New inputs replace the old values
+- After both inputs, the line "Name of the module: class hours per week, class hours per semester, experience" is displayed, hours with two decimal places. New inputs replace the old values
 
-**Given** Math represents 3 ECTS and 19.5 hours of class, **when** the student input intermediate experience, **then** the self study hours will be 49.35 hours.
-**However, given** no modules were selected previously, **then** the message “No modules selected. Please add modules with option 2.” is displayed and the main menu is shown again.
+- **Given** Math represents 3 ECTS and 19.5 hours of class, **when** the student input intermediate experience, **then** the self study hours will be 49.35 hours.
+- **However, given** no modules were selected previously, **then** the message “No modules selected. Please add modules with option 2.” is displayed and the main menu is shown again.
 
 ---
 #### US-5: View Self-Study Hours per Module and Week
 **As a** student, **I want** to see how many hours of self-study each module requires per semester and per week, **so that** I can plan my week realistically. 
 
 **Acceptance criteria**
-- 
-- **Given**   , **when**   , **then**   .
-- **However, given**   , **then**   .
+- When the option to view self-study hours is selected in the main menu, the list of modules from the personalised selection will be displayed, together with the class hours and the experience level entered by the student in US-4.
+- For each module, the program will display the self-study hours per semester, calculated as ((30 hrs * ECTS) - class hours) * (1 - experience %), and the self-study hours per week, calculated as self-study hours per semester / 12.
+- The program will display the total self-study hours per week across all selected modules, so the student can plan the whole week realistically.
+- All values will be displayed rounded to 2 decimals, while the totals are calculated from the unrounded values.
+- **Given** Math represents 3 ECTS and 19.5 hours of class, **when** the student selected intermediate experience, **then** the program will display 49.35 hours of self-study per semester and 4.11 hours per week.
+- **Given** the personalised selection contains Math (3 ECTS, 19.5 hours of class, intermediate experience) and Programming (6 ECTS, 36 hours of class, no previous experience), **when** the student views the self-study hours, **then** the program will display 49.35 hours per semester and 4.11 hours per week for Math, 144.00 hours per semester and 12 hours per week for Programming, and a total of 193.35 hours per semester and 16.11 hours per week.
+- **However**, **given** a module was selected but its class hours or experience were not entered, **then** the program will ask the student to complete the data for that module in option 3 (US-4), and the module will not be included in the totals.
 
 ---
 #### US-6: Enter Weekly availability to assess self-study time
 **As a** student, **I want** to enter my free hours for each day of the week, **so that** I can see whether my free time is enough for my self-study.
 
 **Acceptance criteria**
-- 
-- **Given**   , **when**   , **then**   .
-- **However, given**   , **then**   .
+- When the option to enter free hours is selected in the main menu, the program will ask the student for the free hours of each day of the week, from Monday to Sunday, one day at a time.
+- Each value must be a number between 0 and 24, and both 2.5 and 2,5 are accepted as decimals. If the value is not valid, the program will ask the student to enter it again.
+- Once all seven days are entered, the program will display the free hours per day and the total free hours per week.
+- The program will compare the total free hours per week with the total self-study hours per week from US-5, and will tell the student whether the free time is enough or not. If it is not enough, it will display how many hours are missing. If it is enough, it will display how many hours are left over.
+- **Given** the total self-study is 16.11 hours per week (Math with intermediate experience and Programming with no previous experience), **when** the student enters 2 free hours from Monday to Friday, 4 hours on Saturday and 3.5 hours on Sunday, **then** the total free time is 14.50 hours and the program will display that the free time is not enough, with 1.39 hours left over.
+- **Given** the total self-study is 16.11 hours per week, **when** the student enters 1 free hour from Monday to Friday and 0 hours on Saturday and Sunday, **then** the total free time is 5.00 hours and the program will display that the free time is not enough, with 11.11 hours missing.
+- **However**, **given** a student enters a negative number, or a number higher than 24, or a non-numeric value (eg. Tbc), **then** the program will display an error message, and ask the student to enter the value again, without moving on to the next day.
 
 ---
 #### US-7: Generate a Personalized Weekly Study Plan
 **As a** student, **I want** to get a study plan that distributes my self-study hours over my free hours, **so that** I need less time to plan my week.
 
 **Acceptance criteria**
-- 
-- **Given**   , **when**   , **then**   .
-- **However, given**   , **then**   .
+- When the option to get a study plan is selected in the main menu, the program will display a weekly plan with, for each day from Monday to Sunday, the modules to study and the hours assigned to each of them.
+- The weekly self-study hours of each module (US-5) will be distributed over the free hours of each day (US-6), and the hours assigned to a day will never exceed the free hours of that day.
+- The program will display, for each day, the total hours planned and the free hours that remain, and, for each module, the total hours planned for the week, so the student can check that they match the weekly self-study hours of US-5.
+- All values will be displayed rounded to 2 decimals, while the plan is calculated from the unrounded values.
+- **Given** Math needs 3.53 hours per week (3 ECTS, 19.5 hours of class, intermediate experience), Programming needs 10.07 hours per week (6 ECTS, 39 hours of class, no previous experience), **when** the student has 17.5 free hours per week (2.5 hours from Monday to Friday, 3 hours on Saturday and 2 hours on Sunday), **then** the program will display the following plan: 
+	- Monday: Math 2.50 h, 0.00 h remaining.
+	- Tuesday: Math 1.03 h and Programming 1.48 h, 0.00 h remaining.
+	- Wednesday, Thursday and Friday: Programming 2.50 h each, 0.00 h remaining.
+	- Saturday: Programming 1.10 h, 1.90 h remaining.
+	- Sunday: free day, 2.00 h remaining.
+- The total planned is 13.60 hours (Math 3.53 h, Programming 10.07 h) and 3.90 free hours remain (1.90 on Saturday and 2.00 on Sunday).
+
+- **However**, **given** the free hours were not entered, **then** the program will ask the student to enter them in the option for free hours (US-6) before coming back.
 
 ---
 #### US-8: Weekly record of studied hours
@@ -106,28 +124,35 @@ After both inputs, the line "Name of the module: class hours per week, class hou
 
 **Acceptance criteria**
 - When the option 8 is selected in the main menu, the list of modules from the personalised selection will be displayed.
-- The number of the week and if the self-study is finished for said week will be asked of the student. Only if the studying is done, will the student be able to recorded how many hours of self-study was done per module for the chosen week.
-- The amount of selt-study hours the students should have invested per module per week will be displayed, as well as the previously recorded self-studied hours for the week, allowing the student to compare the two and see if the invested time was sufficient or not.
+- The number of the week and if the self-study is finished for said week will be asked of the student. Only if the studying is done, will the student be able to record how many hours of self-study was done per module for the chosen week.
+- The amount of self-study hours the student should have invested per module per week will be displayed, as well as the previously recorded self-studied hours for the week, allowing the student to compare the two and see if the invested time was sufficient or not.
+- After each recording, the program writes the file study_log.txt in the project folder: one line per selected module in the format “module;Name;class hours;level” and one line per recorded week and module in the format “week;N;Name;planned;actual”, e.g. “week;1;Mathematics_1;3.5;2.0”.
+- At program start, the file is read and the message “Loaded M module(s) and W week(s).” is displayed, so the student does not have to select the modules again.
+- If a week is recorded a second time, the new value replaces the old one. There is one value per module and week.
 - **Given** the personalised selection of module is 1 Mathematics_1 and the student selected intermediate experience in the module, **when** the week selected is week 1, the student is all done with the self-study this week and the recorded self-study hours for this module are 2 hours, **then** the student will see that the self study hours invested for week 1 were insufficent.
 - **However, given** no modules were selected, **then** the program will ask the student to come to the main menu and select number 2.
+- **However, given** study_log.txt does not exist at start, **then** the message “No saved data found.” is displayed and the program starts with an empty selection.
 
 ---
 #### US-9: Bar chart export from beginning of semester until given week.
 **As a** student, **I want** to export a bar chart of my planned and actual study hours per module from the beginning of the semester until a given week, **so that** I can see directly in which module I am behind.
+
 **Acceptance criteria**
-When option 9 is selected in the main menu, the program asks "Until which week? (1 to N):", where N is the last week recorded in US-8.
-The chart compares, for each selected module, the planned self-study hours (hours per week from US-5 times the number of weeks from week 1 to the given week) with the actual hours recorded in US-8 for these weeks. Weeks without a record count as 0 actual hours.
-**Given**   , **when**   , **then**   .
-**However, given** modules are selected but no week is recorded yet, **then** the message "No weeks recorded yet." is displayed and no file is created.
-**However, given** no modules were selected previously, **then** the message "No modules selected. Please add modules with option 2." is displayed and the main menu is shown again.
+- When option 9 is selected in the main menu, the program asks "Until which week? (1 to N):", where N is the last week recorded in US-8.
+- The chart compares, for each selected module, the planned self-study hours (hours per week from US-5 times the number of weeks from week 1 to the given week) with the actual hours recorded in US-8 for these weeks.
+- Weeks without a record count as 0 actual hours.
+- **Given**   , **when**   , **then**   .
+- **However, given** modules are selected but no week is recorded yet, **then** the message "No weeks recorded yet." is displayed and no file is created.
+- **However, given** no modules were selected previously, **then** the message "No modules selected. Please add modules with option 2." is displayed and the main menu is shown again.
 ---
 
 **Use cases:**
 
-Show Assessement modules (from modules.txt)
-Create personalised selection (choose modules)
-Generate personalised weekly study plan
-Print Bar chart (to ----.txt)
+- Show Assessement modules (from modules.txt)
+- Create personalised selection (choose modules)
+- Generate personalised weekly study plan
+- Save recorded self-study hours (study_log.txt)
+- Print Bar chart (to ----.txt)
 
 ## ✅ Project Requirements
 Each app must meet the following three criteria in order to be accepted :
@@ -136,6 +161,8 @@ Each app must meet the following three criteria in order to be accepted :
 2. Data validation (input checking)
 3. File processing (read/write)
 ---
+
+### 1. Interactive App (Console Input)
 The application interacts with the user via the console. Users can:
 - View the assessement modules, their ECTS and a short description
 - Select modules that are taken to create a personalised selection
@@ -144,15 +171,12 @@ The application interacts with the user via the console. Users can:
 - View how many hours of self-study should be invested per week and per module
 - Enter weekly availability to compare with the amount of self-study that should be invested
 - Generate a personalised weekly study plan
-- Record self-studied hours on a weekly basis
+- Record and save self-studied hours on a weekly basis
 - Create a bar chart export to compare should be and done study hours
-
-### 1. Interactive App (Console Input)
-
 ---
 
 ### 2. Data Validation
-
+#To be updated with our examples.
 The application validates all user input to ensure data integrity and a smooth user experience. This is implemented in `main-invoice.py` as follows:
 
 - **Menu selection:** When the user enters a pizza number, the program checks if the input is a digit and within the valid menu range:
@@ -224,7 +248,7 @@ The application reads and writes data using files:
 Basel_PT_Team_A/
 ├── main.py             # main program logic (console application)
 ├── modules.txt         # assessement modules (input data file)
-├── ---.txt             # example of a generated recorded self-study hours (output file)
+├── study_log.txt             # example of a generated recorded self-study hours (output file)
 ├── meeting-notes.md    # our notes, deadlines and objectives for the duration of the project
 └── README.md           # project description and milestones
 ```
