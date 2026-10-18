@@ -10,7 +10,7 @@ lectures (where) resulting in too little time for self-study and fall behind (wh
 
 **Scenario**
 
-Study Planner solves the part of the problem where the weekly self-study hours are worked out and distributed: a student selects the modules of the semester, enters the class hours and the free hours of the week, and gets the self-study hours per module and a study plan for the week. 
+Study Planner solves the part of the problem where the weekly self-study hours are worked out and distributed: a student selects the modules of the semester, enters the class hours and the experience level and the free hours of the week, and gets the self-study hours per module and a study plan for the week. Every week, the student records the hours actually studied and can export a chart that compares the planned and the actual hours from the beginning of the semester until a chosen week.
 
 ### 👤 User Roles
 
@@ -26,68 +26,41 @@ Study Planner solves the part of the problem where the weekly self-study hours a
 **As a** student, **I want** to see a numbered list of the five assesment modules of my programm with their ECTS and a short description of each of them, **so that** I can have an overview of the modules of the first semester without looking them up somewhere else. 
 
 **Acceptance criteria**
-<<<<<<< HEAD
-The assesment modules list, their ECTS and descritpion are displayed when option 1 is selected in the main menu.
-Each module is shown on its own line in the format "Number. Name of the module - number of ECTS : description".
-The displayed list starts at 1. and follows the order from 1 to 5 / modules.txt #WATCH OUT
-**Given** modules.txt contains the five assesment modules, **when** the list is diplayed, **then** five line are shown.
-**However, given** a line in modules.txt does not have the format “Number. Name; ECTS; description”, **then** this line is skipped with the message “Skipping invalid line: ...” and the other modules are still displayed.
-=======
 - The assesment modules list, their ECTS and descritpion are diplayed when option 1 in the main menu.
 - Each module is shown on its own line in the format "Number Name of the module - number of ECTS : description".
 - The displayed list starts at 1. and follows the order in modules.txt
 - **Given** modules.txt contains the five assesment modules, **when** the list is diplayed, **then** five line are shown.
 - **However, given**   , **then**   .
->>>>>>> d78e23fe9a1d088a73d25ae7321265967e7eee85
+
+forgot to push last Wednesday(tahir): **However, given** a line in modules.txt does not have the format “Number. Name; ECTS; description”, **then** this line is skipped with the message “Skipping invalid line: ...” and the other modules are still displayed.
 
 ---
 #### US-2: Select modules to calculate overall hours for each 
 **As a** student, **I want** to add modules from the list to my selection, **so that** I can calculate the total semester workload for the modules I am taking.
 
 **Acceptance criteria**
-<<<<<<< HEAD
-The list of modules with their associated number is displayed to allow the student to know which number should be selected depending on which class is taken, in the format "Number. Name of the module", when selecting option 2 in the main menu.
-The programm will ask which module should be added to the personalised selection.
-If the selection is done, the calculation of the overall hours of the selected modules will be displayed. Each line will display one module and its associated overall hours in the format "Number. Name of the module - Number of ECTS : Overall hours for the semester".
-**Given** the selected modules are 1 and 2,**when** the selection is done, **then** the calculated overall hours for both of those modules will be displayed, eg :
-1. Mathematics_1 - 3 ECTS : 90 hours overall for this module.
-2. Statistics_1 - 3 ECTS : 90 hours overall for this module.
-**However, given** a number is not an option in the list,  **then** the message "This module doesn't exist." will be displayed and the selecting question will be asked again.
-**However, given** a number is already selected, **then** the message "The module is already selected." will be displayed and the selecting question will be asked again.
-**However, given** the selection comprise every possible modules, **then** the messsage "All modules are already selected!" will be displayed.
-=======
 - The list of modules with their associated number is displayed to allow the student to know which number should be selected depending on which class is taken, in the format "Number Name of the module", when selecting option 2 in the main menu.
 - The programm will ask which module should be added to the personalised selection.
 - If the selection is done, the calculation of the overall hours of the selected modules will be displayed. Each line will display one module and its associated overall hours in the format "Number Name of the module - Number of ECTS : Overall hours for the semester".
 - **Given** the module 1 Mathematics_1 which represents 3 ECTS,**when** selected, **then** the overall hours for this module will be displayed, i.e. 90 hours.
 - **However, given** a number is not an option in the list,  **then** the message "Error : select a number for the list." will be displayed and the selecting question will be asked again.
 - **However, given** a number is already selected, **then** the message "Error : the module is already selected." will be displayed and the selecting question will be asked again.
->>>>>>> d78e23fe9a1d088a73d25ae7321265967e7eee85
 
 ---
 #### US-3: Remove a module 
 **As a** student, **I want** to remove a selected module, **so that** I can correct a wrong entry without re-entering everything again. 
-<<<<<<< HEAD
 When option 3 is selected in the main menu, the selected modules are displayed as a numbered list in the format "Number. Name of the module", followed by the question "Number of the module to remove (or done):".
 A valid input is a number from this list. After removing, the message "Removed: Name of the module" and the remaining selection are displayed, and the question is asked again. Entering "done" returns to the main menu.
 The class hours and the experience of a removed module are removed as well, so US-5 no longer counts it.
 **Given** the selection is 1. Mathematics_1 and 2. Statistics_1, **when** the student enters 2, **then** the message "Removed: Statistics_1" and the remaining selection "1. Mathematics_1" are displayed, and the question is asked again.
 **However, given** the student enters a number that is not in the list for example 3 or 0, text instead of a number, or nothing, **then** the message "This module is not in your selection." is displayed and the question "Number of the module to remove (or done):" is asked again.
 
-=======
-
-**Acceptance criteria**
-- 
-- **Given**   , **when**   , **then**   .
-- **However, given**   , **then**   .
->>>>>>> d78e23fe9a1d088a73d25ae7321265967e7eee85
 
 ---
 #### US-4: Enter class hours and personal experience
 **As a** student, **I want** to enter my class hours per week and my personal experience for each selected module, between no previous experience, intermediate or high, **so that** my self-study hours represents my personal starting point.
 
 **Acceptance criteria**
-<<<<<<< HEAD
 When option 4 is selected in the main menu, the program asks two questions for each selected module: "Name of the module - class hours per week:" and "Name of the module - experience (1 = no previous experience, 2 = intermediate, 3 = high):".
 Class hours are a number of 0 or more. The class hours per semester are the class hours per week times 13 class weeks. The class hours per semester must be smaller than the total workload of the module (ECTS x 30 hours). Otherwise no time would be left for self-study.
 The experience is entered as the number 1, 2 or 3. It reduces the self-study hours calculated in US-5:
@@ -99,14 +72,6 @@ After both inputs, the line "Name of the module: class hours per week, class hou
 
 **Given** Math represents 3 ECTS and 19.5 hours of class, **when** the student input intermediate experience, **then** the self study hours will be 49.35 hours.
 **However, given** no modules were selected previously, **then** the message “No modules selected. Please add modules with option 2.” is displayed and the main menu is shown again.
-=======
-- For no previous experience = 0%
-- For intermediate experience = 30%
-- For high experience = 60%
-- Self study hours for Math module (3ECTS) = ((30hrs * 3 ECTS) - class hours) * (1 - experience %) 
-- **Given** Math represents 3 ECTS and 19.5 hours of class, **when** the student input intermediate experience, **then** the self study hours will be 49.35 hours.
-- **However, given** no modules were selected previously, **then** the program will ask the student to come back to the main menu and select the module on the option 2 before comming back.
->>>>>>> d78e23fe9a1d088a73d25ae7321265967e7eee85
 
 ---
 #### US-5: View Self-Study Hours per Module and Week
@@ -148,7 +113,6 @@ After both inputs, the line "Name of the module: class hours per week, class hou
 
 ---
 #### US-9: Bar chart export from beginning of semester until given week.
-<<<<<<< HEAD
 **As a** student, **I want** to export a bar chart of my planned and actual study hours per module from the beginning of the semester until a given week, **so that** I can see directly in which module I am behind.
 **Acceptance criteria**
 When option 9 is selected in the main menu, the program asks "Until which week? (1 to N):", where N is the last week recorded in US-8.
@@ -156,15 +120,6 @@ The chart compares, for each selected module, the planned self-study hours (hour
 **Given**   , **when**   , **then**   .
 **However, given** modules are selected but no week is recorded yet, **then** the message "No weeks recorded yet." is displayed and no file is created.
 **However, given** no modules were selected previously, **then** the message "No modules selected. Please add modules with option 2." is displayed and the main menu is shown again.
-=======
-**As a** student, **I want** to export a bar chart of my planned and actual study hours per module per week, **so that** I can see directly in which module I am behind.
-
-**Acceptance criteria**
-- 
-- **Given**   , **when**   , **then**   .
-- **However, given**   , **then**   .
-
->>>>>>> d78e23fe9a1d088a73d25ae7321265967e7eee85
 ---
 
 **Use cases:**
