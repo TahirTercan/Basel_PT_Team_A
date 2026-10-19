@@ -43,7 +43,17 @@ Let’s aim for 29. Nov.
 - applied the template from Pizza example
 
 ### To do until 18.10
-- work on the acceptance criteria and the logic
+- work on the acceptance criteria and the 
+
+## Meeting Notes 18.10.2026 - Meeting #4
+
+### Done
+- finished acceptances criteria 
+- updated the README template
+- created 1 working file per person (name.py)
+
+### To do until 25.10
+- start drafting mindmaps and flow
 
 ## How we collaborate
 - MS Teams
