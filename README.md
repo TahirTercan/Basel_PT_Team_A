@@ -54,11 +54,13 @@ Study Planner solves the part of the problem where the weekly self-study hours a
 - The class hours and the experience of a removed module are removed as well, so US-5 no longer counts it.
 - **Given** the selection is 1. Mathematics_1 and 2. Statistics_1, **when** the student enters 2, **then** the message "Removed: Statistics_1" and the remaining selection "1. Mathematics_1" are displayed, and the question is asked again.
 - **However, given** the student enters a number that is not in the list for example 3 or 0, text instead of a number, or nothing, **then** the message "This module is not in your selection." is displayed and the question "Number of the module to remove (or done):" is asked again.
+- **However, given** the student removes the last module of the selection, **then** the messages "Removed: Name of the module" and "No modules selected." are displayed and the program displays the main menu.
+- **However, given** no modules were selected previously, **then** the message “No modules selected. Please add modules with option 2.” is displayed and the main menu is shown again.
 
 
 ---
 #### US-4: Enter class hours and personal experience
-**As a** student, **I want** to enter my class hours per week and my personal experience for each selected module, between no previous experience, intermediate or high, **so that** my self-study hours represents my personal starting point.
+**As a** student, **I want** to enter my class hours per week and my personal experience for each selected module, between no previous experience, intermediate or high, **so that** my self-study hours reflect my personal starting point.
 
 **Acceptance criteria**
 - When option 4 is selected in the main menu, the program asks two questions for each selected module: "Name of the module - class hours per week:" and "Name of the module - experience (1 = no previous experience, 2 = intermediate, 3 = high):".
@@ -68,10 +70,14 @@ Study Planner solves the part of the problem where the weekly self-study hours a
 	- For intermediate experience = 30%
 	- For high experience = 60%
 Self study hours for Math module (3ECTS) = ((30hrs * 3 ECTS) - class hours per semester) * (1 - experience %)
-- After both inputs, the line "Name of the module: class hours per week, class hours per semester, experience" is displayed, hours with two decimal places. New inputs replace the old values
+- After both inputs, the line "Name of the module: class hours per week, class hours per semester, experience" is displayed, hours with two decimal places. New inputs replace the old values.
+- **Given** Mathematics_1 (3 ECTS) is selected, **when** the student enters 1.5 and 2, **then** the program shows "Mathematics_1: 1.50 h per week, 19.50 h per semester, experience: intermediate".
+- **Given** Mathematics_1 with 19.5 class hours per semester, **when** the student chooses level 2, **then** the self-study is 49.35 hours (shown in US-5).
+- **However, given** the student enters 7 class hours for a 3 ECTS module (7 x 13 = 91 h, more than 90 h), **then** the program shows "Class hours must be less than the workload of 90 h." and asks again.
+- **However, given** the student enters -1, "1,5", letters or nothing as class hours, **then** the program shows "Invalid number." and asks again.
+- **However, given** the student enters 0, 4, 1.5 or letters as level, **then** the program shows "Invalid choice." and asks again.
+- **However, given** no modules are selected, **then** the program shows "No modules selected. Please add modules with option 2." and goes back to the main menu.
 
-- **Given** Math represents 3 ECTS and 19.5 hours of class, **when** the student input intermediate experience, **then** the self study hours will be 49.35 hours.
-- **However, given** no modules were selected previously, **then** the message “No modules selected. Please add modules with option 2.” is displayed and the main menu is shown again.
 
 ---
 #### US-5: View Self-Study Hours per Module and Week
@@ -138,14 +144,20 @@ Self study hours for Math module (3ECTS) = ((30hrs * 3 ECTS) - class hours per s
 **As a** student, **I want** to export a bar chart of my planned and actual study hours per module from the beginning of the semester until a given week, **so that** I can see directly in which module I am behind.
 
 **Acceptance criteria**
-- When option 9 is selected in the main menu, the program asks "Until which week? (1 to N):", where N is the last week recorded in US-8.
-- The chart compares, for each selected module, the planned self-study hours (hours per week from US-5 times the number of weeks from week 1 to the given week) with the actual hours recorded in US-8 for these weeks.
-- Weeks without a record count as 0 actual hours.
-- **Given**   , **when**   , **then**   .
-- **However, given** modules are selected but no week is recorded yet, **then** the message "No weeks recorded yet." is displayed and no file is created.
-- **However, given** no modules were selected previously, **then** the message "No modules selected. Please add modules with option 2." is displayed and the main menu is shown again.
----
+#### US-9: Bar chart export from beginning of semester until given week.
+**As a** student, **I want** to export a bar chart of my planned and actual study hours per module from the beginning of the semester until a given week, **so that** I can see directly in which module I am behind.
 
+**Acceptance criteria**
+- When option 9 is selected in the main menu, the program asks "Show progress up to week (1 to N, Enter for N):", where N is the last week recorded in US-8. An empty input means week N. The entered week is called W below.
+- For each selected module, the chart compares the planned hours (hours per week from US-5 times W) with the hours recorded in US-8 for the weeks 1 to W. A week without a record counts as 0 hours.
+- The chart shows two bars per module, planned in green and actual in blue, with the title "Study progress after week W", the module names on the x-axis and "Hours" on the y-axis.
+- The program saves the chart as "progress_week_WW.png" in the project folder (W as two digits, an existing file is replaced) and shows "Chart saved as progress_week_WW.png".
+- **Given** Mathematics_1 and Statistics_1 are selected, Statistics_1 needs 4.8 hours per week and the student recorded 3.0 hours in week 1 and 4.0 hours in week 2 for it, **when** the student enters 2, **then** the file "progress_week_02.png" shows both modules, Statistics_1 with 9.6 h planned and 7.0 h actual, and the program shows "Chart saved as progress_week_02.png".
+- **However, given** the student enters 0, a week after the last recorded one, or letters, **then** the program shows "Invalid week. Enter a number from 1 to N." and asks again.
+- **However, given** no week is recorded yet, **then** the program shows "No weeks recorded yet." and creates no file.
+- **However, given** no modules are selected, **then** the program shows "No modules selected. Please add modules with option 2." and displays the main menu.
+
+---
 **Use cases:**
 
 - Show Assessement modules (from modules.txt)
