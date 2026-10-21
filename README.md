@@ -85,11 +85,11 @@ Self study hours for Math module (3ECTS) = ((30hrs * 3 ECTS) - class hours per s
 
 **Acceptance criteria**
 - When the option to view self-study hours is selected in the main menu, the list of modules from the personalised selection will be displayed, together with the class hours and the experience level entered by the student in US-4.
-- For each module, the program will display the self-study hours per semester, calculated as ((30 hrs * ECTS) - class hours) * (1 - experience %), and the self-study hours per week, calculated as self-study hours per semester / 12.
+- For each module, the program will display the self-study hours per semester, calculated as ((30 hrs * ECTS) - class hours) * (1 - experience %), and the self-study hours per week, calculated as self-study hours per semester / 14.
 - The program will display the total self-study hours per week across all selected modules, so the student can plan the whole week realistically.
 - All values will be displayed rounded to 2 decimals, while the totals are calculated from the unrounded values.
-- **Given** Math represents 3 ECTS and 19.5 hours of class, **when** the student selected intermediate experience, **then** the program will display 49.35 hours of self-study per semester and 4.11 hours per week.
-- **Given** the personalised selection contains Math (3 ECTS, 19.5 hours of class, intermediate experience) and Programming (6 ECTS, 36 hours of class, no previous experience), **when** the student views the self-study hours, **then** the program will display 49.35 hours per semester and 4.11 hours per week for Math, 144.00 hours per semester and 12 hours per week for Programming, and a total of 193.35 hours per semester and 16.11 hours per week.
+- **Given** Math represents 3 ECTS and 19.5 hours of class, **when** the student selected intermediate experience, **then** the program will display 49.3 hours of self-study per semester and 3.5 hours per week.
+- **Given** the personalised selection contains Math (3 ECTS, 19.5 hours of class, intermediate experience) and Programming (6 ECTS, 39 hours of class, no previous experience), **when** the student views the self-study hours, **then** the program will display 49.3 hours per semester and 3.5 hours per week for Math, 141.00 hours per semester and 10 hours per week for Programming, and a total of 190.3 hours per semester and 13.5 hours per week.
 - **However**, **given** a module was selected but its class hours or experience were not entered, **then** the program will ask the student to complete the data for that module in option 3 (US-4), and the module will not be included in the totals.
 
 ---
@@ -98,11 +98,11 @@ Self study hours for Math module (3ECTS) = ((30hrs * 3 ECTS) - class hours per s
 
 **Acceptance criteria**
 - When the option to enter free hours is selected in the main menu, the program will ask the student for the free hours of each day of the week, from Monday to Sunday, one day at a time.
-- Each value must be a number between 0 and 24, and both 2.5 and 2,5 are accepted as decimals. If the value is not valid, the program will ask the student to enter it again.
+- Each value must be a number between 0 and 24, and only 2.5 is accepted as decimals. If the value is not valid, the program will ask the student to enter it again.
 - Once all seven days are entered, the program will display the free hours per day and the total free hours per week.
 - The program will compare the total free hours per week with the total self-study hours per week from US-5, and will tell the student whether the free time is enough or not. If it is not enough, it will display how many hours are missing. If it is enough, it will display how many hours are left over.
-- **Given** the total self-study is 16.11 hours per week (Math with intermediate experience and Programming with no previous experience), **when** the student enters 2 free hours from Monday to Friday, 4 hours on Saturday and 3.5 hours on Sunday, **then** the total free time is 14.50 hours and the program will display that the free time is not enough, with 1.39 hours left over.
-- **Given** the total self-study is 16.11 hours per week, **when** the student enters 1 free hour from Monday to Friday and 0 hours on Saturday and Sunday, **then** the total free time is 5.00 hours and the program will display that the free time is not enough, with 11.11 hours missing.
+- **Given** the total self-study is 16.1 hours per week (Math with intermediate experience and Programming with no previous experience), **when** the student enters 2 free hours from Monday to Friday, 4 hours on Saturday and 3.5 hours on Sunday, **then** the total free time is 14.5 hours and the program will display that the free time is not enough, with 1.4 hours left over.
+- **Given** the total self-study is 16.1 hours per week, **when** the student enters 1 free hour from Monday to Friday and 0 hours on Saturday and Sunday, **then** the total free time is 5.0 hours and the program will display that the free time is not enough, with 11.1 hours missing.
 - **However**, **given** a student enters a negative number, or a number higher than 24, or a non-numeric value (eg. Tbc), **then** the program will display an error message, and ask the student to enter the value again, without moving on to the next day.
 
 ---
@@ -114,13 +114,13 @@ Self study hours for Math module (3ECTS) = ((30hrs * 3 ECTS) - class hours per s
 - The weekly self-study hours of each module (US-5) will be distributed over the free hours of each day (US-6), and the hours assigned to a day will never exceed the free hours of that day.
 - The program will display, for each day, the total hours planned and the free hours that remain, and, for each module, the total hours planned for the week, so the student can check that they match the weekly self-study hours of US-5.
 - All values will be displayed rounded to 2 decimals, while the plan is calculated from the unrounded values.
-- **Given** Math needs 3.53 hours per week (3 ECTS, 19.5 hours of class, intermediate experience), Programming needs 10.07 hours per week (6 ECTS, 39 hours of class, no previous experience), **when** the student has 17.5 free hours per week (2.5 hours from Monday to Friday, 3 hours on Saturday and 2 hours on Sunday), **then** the program will display the following plan: 
-	- Monday: Math 2.50 h, 0.00 h remaining.
-	- Tuesday: Math 1.03 h and Programming 1.48 h, 0.00 h remaining.
-	- Wednesday, Thursday and Friday: Programming 2.50 h each, 0.00 h remaining.
-	- Saturday: Programming 1.10 h, 1.90 h remaining.
-	- Sunday: free day, 2.00 h remaining.
-- The total planned is 13.60 hours (Math 3.53 h, Programming 10.07 h) and 3.90 free hours remain (1.90 on Saturday and 2.00 on Sunday).
+- **Given** Math needs 3.5 hours per week (3 ECTS, 19.5 hours of class, intermediate experience), Programming needs 10 hours per week (6 ECTS, 39 hours of class, no previous experience), **when** the student has 17.5 free hours per week (2.5 hours from Monday to Friday, 3 hours on Saturday and 2 hours on Sunday), **then** the program will display the following plan: 
+	- Monday: Math 2.5 h, 0.0 h remaining.
+	- Tuesday: Math 1.0 h and Programming 1.5 h, 0.0 h remaining.
+	- Wednesday, Thursday and Friday: Programming 2.5 h each, 0.0 h remaining.
+	- Saturday: Programming 1.0 h, 2.0 h remaining.
+	- Sunday: free day, 2.0 h remaining.
+- The total planned is 13.5 hours (Math 3.5 h, Programming 10.0 h) and 4.0 free hours remain (2.0 h on Saturday and 2.0 h on Sunday).
 
 - **However**, **given** the free hours were not entered, **then** the program will ask the student to enter them in the option for free hours (US-6) before coming back.
 
