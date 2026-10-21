@@ -27,10 +27,10 @@ Study Planner solves the part of the problem where the weekly self-study hours a
 
 **Acceptance criteria**
 - The assesment modules list, their ECTS and descritpion are diplayed when option 1 in the main menu.
-- Each module is shown on its own line in the format "Number Name of the module - number of ECTS : description".
+- Each module is shown on its own line in the format "Name of the module - number of ECTS : description".
 - The displayed list starts at 1. and follows the order in modules.txt
 - **Given** modules.txt contains the five assesment modules, **when** the list is diplayed, **then** five line are shown.
-- **However, given** a line in modules.txt does not have the format “Number. Name; ECTS; description”, **then** this line is skipped with the message “Skipping invalid line: ...” and the other modules are still displayed.
+- **However, given** a line in modules.txt does not have the format "Name; ECTS; description", **then** this line is skipped with the message "Skipping invalid line: ...” and the other modules are still displayed.
 
 ---
 #### US-2: Select modules to calculate overall hours for each 
@@ -136,7 +136,7 @@ Self study hours for Math module (3ECTS) = ((30hrs * 3 ECTS) - class hours per s
 - At program start, the file is read and the message “Loaded M module(s) and W week(s).” is displayed, so the student does not have to select the modules again.
 - If a week is recorded a second time, the new value replaces the old one. There is one value per module and week.
 - **Given** the personalised selection of module is 1 Mathematics_1 and the student selected intermediate experience in the module, **when** the week selected is week 1, the student is all done with the self-study this week and the recorded self-study hours for this module are 2 hours, **then** the student will see that the self study hours invested for week 1 were insufficent.
-- **However, given** no modules were selected, **then** the program will ask the student to come to the main menu and select number 2.
+- **However, given** no modules were selected, **then** the program will show the error message "No modules selected, please add modules with option 2".
 - **However, given** study_log.txt does not exist at start, **then** the message “No saved data found.” is displayed and the program starts with an empty selection.
 
 ---
