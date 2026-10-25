@@ -109,7 +109,7 @@ Self study hours for Math module (3ECTS) = ((30hrs * 3 ECTS) - class hours per s
 - **However**, **given** there is no self-study total available from US-5 (no module has its class hours and experience level completed), **then** the program will display the free hours but will not make the comparison, and will ask the student to complete the module data first (US-4).
 
 ---
-#### US-7: Generate a Personalized Weekly Study Plan
+#### US-7: Generate a Personalised Weekly Study Plan
 **As a** student, **I want** to get a study plan that distributes my self-study hours over my free hours, **so that** I need less time to plan my week.
 
 **Acceptance criteria**
@@ -121,9 +121,9 @@ Self study hours for Math module (3ECTS) = ((30hrs * 3 ECTS) - class hours per s
 - All values will be displayed rounded to 2 decimal places using the round-half-up rule, while the plan is calculated from the unrounded values.
 - **Given** Math needs 3.53 hours per week (3 ECTS, 19.50 hours of class, intermediate experience) and Programming needs 10.07 hours per week (6 ECTS, 39.00 hours of class, no previous experience), **when** the student has 17.50 free hours per week (2.5 hours from Monday to Friday, 3 hours on Saturday and 2 hours on Sunday), **then** the program will display the following plan:
   - Monday: Math 2.50 h, 0.00 h remaining.
-  - Tuesday: Math 1.03 h and Programming 1.48 h, 0.00 h remaining.
+  - Tuesday: Math 1.03 h and Programming 1.47 h, 0.00 h remaining.
   - Wednesday, Thursday and Friday: Programming 2.50 h each, 0.00 h remaining.
-  - Saturday: Programming 1.10 h, 1.90 h remaining.
+  - Saturday: Programming 1.11 h, 1.89 h remaining.
   - Sunday: no study planned, 2.00 h remaining.
   - Total planned: 13.60 h (Math 3.53 h, Programming 10.07 h), with 3.90 free hours remaining.
 - **Given** the same modules, **when** the student has 1 free hour from Monday to Friday and 0 hours on Saturday and Sunday, **then** the program will display the following plan:
@@ -245,7 +245,7 @@ The application reads and writes data using files:
 Basel_PT_Team_A/
 ├── main.py             # main program logic (console application)
 ├── modules.txt         # assessement modules (input data file)
-├── study_log.txt             # example of a generated recorded self-study hours (output file)
+├── study_log.txt       # example of a generated recorded self-study hours (output file)
 ├── meeting-notes.md    # our notes, deadlines and objectives for the duration of the project
 └── README.md           # project description and milestones
 ```
