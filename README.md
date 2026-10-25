@@ -169,7 +169,7 @@ Self study hours for Math module (3ECTS) = ((30hrs * 3 ECTS) - class hours per s
 - Create personalised selection (choose modules)
 - Generate personalised weekly study plan
 - Save recorded self-study hours (study_log.txt)
-- Print Bar chart (to ----.txt)
+- Export bar chart (to progress_week_WW.png)
 
 ## ✅ Project Requirements
 Each app must meet the following three criteria in order to be accepted :
@@ -215,7 +215,7 @@ If an input is wrong, the program shows a message and asks again. The exact case
 
 The application reads and writes data using files:
 
-- **Input file:** `modules.txt` — Contains the assessement modules, one item per line in the format `ModuleName;ECTS;Description`.
+- **Input file:** `modules.txt` — Contains the assessement modules, one item per line in the format `ModuleName; ECTS; Description`.
 	- Example:
 		```
 		Mathematics_1; 3; Think logically
@@ -223,19 +223,22 @@ The application reads and writes data using files:
 		```
 	- The application reads this file at startup to display the assessement modules.
 
-- **Output file:** ` ` (and similar) — Generated when the weekly self-study hours are recorded. Contains the number of self-study hours per selected module per week and a total of said hours for the week.
+- **Output file:** `study_log.txt` — Written after every recorded week (US-8) and read at program start. One line per selected module and one line per recorded week and module.
 	- Example:
 		```
-		
+		module;Mathematics_1;1.5;2
+		week;1;Mathematics_1;3.53;2.00
 		```
-		- The output file serves as a record for the user, ensuring a following on self-studied hours during the semester.
+	- The file keeps the selection and all recorded weeks between two program runs.
+
+- **Output file:** `progress_week_WW.png` — The bar chart exported in US-9, WW is the chosen week.
 
 ## ⚙️ Implementation
 
 ### Technology
 - Python 3.x
-- Environment: GitHub Codespaces
-- No external libraries
+- Environment: Visual Studio Code (VS Code)
+- One external library for the chart (to be decided)
 
 ### 📂 Repository Structure
 ```text
@@ -248,7 +251,7 @@ Basel_PT_Team_A/
 ```
 
 ### How to Run
-1. Open the repository in **GitHub Codespaces**
+1. Open the repository in **VS Code**
 2. Open the **Terminal**
 3. Run:
 	```bash
@@ -260,8 +263,11 @@ Basel_PT_Team_A/
 - Standard library only 
 - Library for the chart (to be decided).
 
-These libraries are part of the Python standard library, so no external installation is required. They were chosen for their simplicity and effectiveness in handling file management tasks in a console application.
+The chart library will be added here once we have chosen it.
 
+### Use of AI
+
+We used an AI assistant (Claude and ChatGPT) as a sparring partner, as allowed by the project guidelines: to understand the course slides, to check our user stories and acceptance criteria against the template and the lecturers feedback and to correct our English. The ideas, decisions and examples are our own and we write all code ourselves.
 
 ## 👥 Team & Contributions
 
