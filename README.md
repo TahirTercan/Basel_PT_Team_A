@@ -76,7 +76,7 @@ Self study hours for Math module (3ECTS) = ((30hrs * 3 ECTS) - class hours per s
 - **However, given** the student enters 7 class hours for a 3 ECTS module (7 x 13 = 91 h, more than 90 h), **then** the program shows "Class hours must be less than the workload of 90 h." and asks again.
 - **However, given** the student enters -1, "1,5", letters or nothing as class hours, **then** the program shows "Invalid number." and asks again.
 - **However, given** the student enters 0, 4, 1.5 or letters as level, **then** the program shows "Invalid choice." and asks again.
-- **However, given** no modules are selected, **then** the program shows "No modules selected. Please add modules with option 2." and goes back to the main menu.
+- **However, given** no modules are selected, **then** the program shows "No modules selected. Please add modules with option 2." and the main menu is shown again. 
 
 
 ---
@@ -157,7 +157,7 @@ Self study hours for Math module (3ECTS) = ((30hrs * 3 ECTS) - class hours per s
 - For each selected module, the chart compares the planned hours (hours per week from US-5 times W) with the hours recorded in US-8 for the weeks 1 to W. A week without a record counts as 0 hours.
 - The chart shows two bars per module, planned in green and actual in blue, with the title "Study progress after week W", the module names on the x-axis and "Hours" on the y-axis.
 - The program saves the chart as "progress_week_WW.png" in the project folder (W as two digits, an existing file is replaced) and shows "Chart saved as progress_week_WW.png".
-- **Given** Mathematics_1 and Statistics_1 are selected, Statistics_1 needs 4.8 hours per week and the student recorded 3.0 hours in week 1 and 4.0 hours in week 2 for it, **when** the student enters 2, **then** the file "progress_week_02.png" shows both modules, Statistics_1 with 9.6 h planned and 7.0 h actual, and the program shows "Chart saved as progress_week_02.png".
+- **Given** Mathematics_1 and Statistics_1 are selected, Statistics_1 needs 4.80 hours per week and the student recorded 3.0 hours in week 1 and 4.0 hours in week 2 for it, **when** the student enters 2, **then** the file "progress_week_02.png" shows both modules, Statistics_1 with 9.61 h planned and 7.00 h actual, and the program shows "Chart saved as progress_week_02.png".
 - **However, given** the student enters 0, a week after the last recorded one, or letters, **then** the program shows "Invalid week. Enter a number from 1 to N." and asks again.
 - **However, given** no week is recorded yet, **then** the program shows "No weeks recorded yet." and creates no file.
 - **However, given** no modules are selected, **then** the program shows "No modules selected. Please add modules with option 2." and displays the main menu.
@@ -193,40 +193,17 @@ The application interacts with the user via the console. Users can:
 ---
 
 ### 2. Data Validation
-#To be updated with our examples.
-The application validates all user input to ensure data integrity and a smooth user experience. This is implemented in `main-invoice.py` as follows:
 
-- **Menu selection:** When the user enters a pizza number, the program checks if the input is a digit and within the valid menu range:
-	```python
-	if not choice.isdigit() or not (1 <= int(choice) <= len(menu)):
-			print("⚠️ Invalid choice.")
-			continue
-	```
-	This ensures only valid menu items can be ordered.
+The program checks every input before it uses it: 
+- menu option 
+- module number
+- class hours 
+- experience level
+- free hours
+- week number
+- studied hours 
 
-- **Quantity input:** After a pizza is selected, the program asks for the quantity until a whole number of at least 1 is entered:
-	```python
-	if not quantity.isdigit() or int(quantity) < 1:
-			print("⚠️ Invalid quantity.")
-			continue
-	```
-	This rejects `0`, negative numbers, decimal numbers, and text.
-
-- **Menu file validation:** When reading the menu file, the program checks for valid price values and skips invalid lines:
-	```python
-	try:
-			menu.append({"name": name, "size": size, "price": float(price)})
-	except ValueError:
-			print(f"⚠️ Skipping invalid line: {line.strip()}")
-	```
-
-- **Main menu options:** The main menu checks for valid options and handles invalid choices gracefully:
-	```python
-	else:
-			print("⚠️ Invalid choice.")
-	```
-
-These checks prevent crashes and guide the user to provide correct input, matching the validation requirements described in the project guidelines.
+If an input is wrong, the program shows a message and asks again. The exact cases are the "However, given" lines in the user stories above. Code examples will be added when the functions are written.
 
 ---
 
@@ -280,8 +257,8 @@ Basel_PT_Team_A/
 
 ### Libraries Used
 
-- `os`: Used for file and path operations, such as checking if the menu file exists and creating new files.
-- `glob`: Used to find all invoice files matching a pattern (e.g., `invoice_*.txt`) to determine the next invoice number.
+- Standard library only 
+- Library for the chart (to be decided).
 
 These libraries are part of the Python standard library, so no external installation is required. They were chosen for their simplicity and effectiveness in handling file management tasks in a console application.
 
@@ -300,6 +277,11 @@ These libraries are part of the Python standard library, so no external installa
 - Use this repository as a starting point by importing it into your own GitHub account.  
 - Work only within your own copy — do not push to the original template.  
 - Commit regularly to track your progress.
+
+## 📝 License
+
+This project is provided for **educational use only** as part of the Programming Foundations module.  
+[MIT License](LICENSE)
 
 
 ## 📝 Our assumptions and sources
