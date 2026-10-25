@@ -144,10 +144,6 @@ Self study hours for Math module (3ECTS) = ((30hrs * 3 ECTS) - class hours per s
 **As a** student, **I want** to export a bar chart of my planned and actual study hours per module from the beginning of the semester until a given week, **so that** I can see directly in which module I am behind.
 
 **Acceptance criteria**
-#### US-9: Bar chart export from beginning of semester until given week.
-**As a** student, **I want** to export a bar chart of my planned and actual study hours per module from the beginning of the semester until a given week, **so that** I can see directly in which module I am behind.
-
-**Acceptance criteria**
 - When option 9 is selected in the main menu, the program asks "Show progress up to week (1 to N, Enter for N):", where N is the last week recorded in US-8. An empty input means week N. The entered week is called W below.
 - For each selected module, the chart compares the planned hours (hours per week from US-5 times W) with the hours recorded in US-8 for the weeks 1 to W. A week without a record counts as 0 hours.
 - The chart shows two bars per module, planned in green and actual in blue, with the title "Study progress after week W", the module names on the x-axis and "Hours" on the y-axis.
