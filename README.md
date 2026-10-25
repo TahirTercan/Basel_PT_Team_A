@@ -84,45 +84,54 @@ Self study hours for Math module (3ECTS) = ((30hrs * 3 ECTS) - class hours per s
 **As a** student, **I want** to see how many hours of self-study each module requires per semester and per week, **so that** I can plan my week realistically. 
 
 **Acceptance criteria**
-- When the option to view self-study hours is selected in the main menu, the list of modules from the personalised selection will be displayed, together with the class hours and the experience level entered by the student in US-4.
+- When the student selects the option to view self-study hours in the main menu, the program will display the list of modules from the personalised selection, together with the class hours and the experience level entered by the student in US-4.
 - For each module, the program will display the self-study hours per semester, calculated as ((30 hrs * ECTS) - class hours) * (1 - experience %), and the self-study hours per week, calculated as self-study hours per semester / 14.
 - The program will display the total self-study hours per week across all selected modules, so the student can plan the whole week realistically.
-- All values will be displayed rounded to 2 decimals, while the totals are calculated from the unrounded values.
-- **Given** Math represents 3 ECTS and 19.5 hours of class, **when** the student selected intermediate experience, **then** the program will display 49.3 hours of self-study per semester and 3.5 hours per week.
-- **Given** the personalised selection contains Math (3 ECTS, 19.5 hours of class, intermediate experience) and Programming (6 ECTS, 39 hours of class, no previous experience), **when** the student views the self-study hours, **then** the program will display 49.3 hours per semester and 3.5 hours per week for Math, 141.00 hours per semester and 10 hours per week for Programming, and a total of 190.3 hours per semester and 13.5 hours per week.
-- **However**, **given** a module was selected but its class hours or experience were not entered, **then** the program will ask the student to complete the data for that module in option 3 (US-4), and the module will not be included in the totals.
+- All values will be displayed rounded to 2 decimal places using the round-half-up rule, while the totals are calculated from the unrounded values.
+- "No previous experience" is an explicit option (0%) and is different from not having entered any experience level.
+- **Given** Math represents 3 ECTS and 19.50 hours of class, **when** the student selects intermediate experience, **then** the program will display 49.35 hours of self-study per semester and 3.53 hours per week.
+- **Given** the personalised selection contains Math (3 ECTS, 19.50 hours of class, intermediate experience) and Programming (6 ECTS, 39.00 hours of class, no previous experience), **when** the student views the self-study hours, **then** the program will display 49.35 hours per semester and 3.53 hours per week for Math, 141.00 hours per semester and 10.07 hours per week for Programming, and a total of 190.35 hours per semester and 13.60 hours per week.
+- **However**, **given** a module was selected but its class hours or experience level were not entered, **then** the program will ask the student to complete the data for that module in the "Enter class hours and experience" option (US-4), and the module will not be included in the totals.
 
 ---
 #### US-6: Enter Weekly availability to assess self-study time
 **As a** student, **I want** to enter my free hours for each day of the week, **so that** I can see whether my free time is enough for my self-study.
 
 **Acceptance criteria**
-- When the option to enter free hours is selected in the main menu, the program will ask the student for the free hours of each day of the week, from Monday to Sunday, one day at a time.
-- Each value must be a number between 0 and 24, and only 2.5 is accepted as decimals. If the value is not valid, the program will ask the student to enter it again.
+- When the student selects the option to enter free hours in the main menu, the program will ask the student for the free hours of each day of the week, from Monday to Sunday, one day at a time.
+- Each value must be a number between 0 and 24 (both included) and must be a multiple of 0.5 (for example 2 or 2.5, but not 2.25). If the value is not valid, the program will display an error message and ask the student to enter it again, without moving on to the next day.
 - Once all seven days are entered, the program will display the free hours per day and the total free hours per week.
-- The program will compare the total free hours per week with the total self-study hours per week from US-5, and will tell the student whether the free time is enough or not. If it is not enough, it will display how many hours are missing. If it is enough, it will display how many hours are left over.
-- **Given** the total self-study is 16.1 hours per week (Math with intermediate experience and Programming with no previous experience), **when** the student enters 2 free hours from Monday to Friday, 4 hours on Saturday and 3.5 hours on Sunday, **then** the total free time is 14.5 hours and the program will display that the free time is not enough, with 1.4 hours left over.
-- **Given** the total self-study is 16.1 hours per week, **when** the student enters 1 free hour from Monday to Friday and 0 hours on Saturday and Sunday, **then** the total free time is 5.0 hours and the program will display that the free time is not enough, with 11.1 hours missing.
-- **However**, **given** a student enters a negative number, or a number higher than 24, or a non-numeric value (eg. Tbc), **then** the program will display an error message, and ask the student to enter the value again, without moving on to the next day.
+- The program will compare the total free hours per week with the total self-study hours per week from US-5 (unrounded value), and will tell the student whether the free time is enough or not. If it is not enough, it will display how many hours are missing. If it is enough, it will display how many hours are left over.
+- Hours are displayed rounded to 2 decimal places using the round-half-up rule, while the comparison and the difference are calculated from the unrounded values.
+- **Given** the total self-study is 13.60 hours per week (Math with intermediate experience and Programming with no previous experience, as in US-5), **when** the student enters 2 free hours from Monday to Friday, 4 hours on Saturday and 3.5 hours on Sunday, **then** the total free time is 17.50 hours and the program will display that the free time is enough, with 3.90 hours left over.
+- **Given** the total self-study is 13.60 hours per week, **when** the student enters 1 free hour from Monday to Friday and 0 hours on Saturday and Sunday, **then** the total free time is 5.00 hours and the program will display that the free time is not enough, with 8.60 hours missing.
+- **However**, **given** a student enters a negative number, a number higher than 24, a number that is not a multiple of 0.5 (e.g. 2.25), or a non-numeric or empty value (e.g. "abc"), **then** the program will display an error message and ask the student to enter the value again, without moving on to the next day.
+- **However**, **given** there is no self-study total available from US-5 (no module has its class hours and experience level completed), **then** the program will display the free hours but will not make the comparison, and will ask the student to complete the module data first (US-4).
 
 ---
 #### US-7: Generate a Personalized Weekly Study Plan
 **As a** student, **I want** to get a study plan that distributes my self-study hours over my free hours, **so that** I need less time to plan my week.
 
 **Acceptance criteria**
-- When the option to get a study plan is selected in the main menu, the program will display a weekly plan with, for each day from Monday to Sunday, the modules to study and the hours assigned to each of them.
-- The weekly self-study hours of each module (US-5) will be distributed over the free hours of each day (US-6), and the hours assigned to a day will never exceed the free hours of that day.
+- When the student selects the option to get a study plan in the main menu, the program will display a weekly plan with, for each day from Monday to Sunday, the modules to study and the hours assigned to each of them.
+- The weekly self-study hours of each module (US-5, unrounded values) will be distributed over the free hours of each day (US-6), and the hours assigned to a day will never exceed the free hours of that day.
+- Only modules with class hours and experience level completed (US-4) are included in the plan.
 - The program will display, for each day, the total hours planned and the free hours that remain, and, for each module, the total hours planned for the week, so the student can check that they match the weekly self-study hours of US-5.
-- All values will be displayed rounded to 2 decimals, while the plan is calculated from the unrounded values.
-- **Given** Math needs 3.5 hours per week (3 ECTS, 19.5 hours of class, intermediate experience), Programming needs 10 hours per week (6 ECTS, 39 hours of class, no previous experience), **when** the student has 17.5 free hours per week (2.5 hours from Monday to Friday, 3 hours on Saturday and 2 hours on Sunday), **then** the program will display the following plan: 
-	- Monday: Math 2.5 h, 0.0 h remaining.
-	- Tuesday: Math 1.0 h and Programming 1.5 h, 0.0 h remaining.
-	- Wednesday, Thursday and Friday: Programming 2.5 h each, 0.0 h remaining.
-	- Saturday: Programming 1.0 h, 2.0 h remaining.
-	- Sunday: free day, 2.0 h remaining.
-- The total planned is 13.5 hours (Math 3.5 h, Programming 10.0 h) and 4.0 free hours remain (2.0 h on Saturday and 2.0 h on Sunday).
-
-- **However**, **given** the free hours were not entered, **then** the program will ask the student to enter them in the option for free hours (US-6) before coming back.
+- A day with no hours planned will be displayed as "no study planned", together with its remaining free hours.
+- All values will be displayed rounded to 2 decimal places using the round-half-up rule, while the plan is calculated from the unrounded values.
+- **Given** Math needs 3.53 hours per week (3 ECTS, 19.50 hours of class, intermediate experience) and Programming needs 10.07 hours per week (6 ECTS, 39.00 hours of class, no previous experience), **when** the student has 17.50 free hours per week (2.5 hours from Monday to Friday, 3 hours on Saturday and 2 hours on Sunday), **then** the program will display the following plan:
+  - Monday: Math 2.50 h, 0.00 h remaining.
+  - Tuesday: Math 1.03 h and Programming 1.48 h, 0.00 h remaining.
+  - Wednesday, Thursday and Friday: Programming 2.50 h each, 0.00 h remaining.
+  - Saturday: Programming 1.10 h, 1.90 h remaining.
+  - Sunday: no study planned, 2.00 h remaining.
+  - Total planned: 13.60 h (Math 3.53 h, Programming 10.07 h), with 3.90 free hours remaining.
+- **Given** the same modules, **when** the student has 1 free hour from Monday to Friday and 0 hours on Saturday and Sunday, **then** the program will display the following plan:
+  - Monday, Tuesday and Wednesday: Math 1.00 h each, 0.00 h remaining.
+  - Thursday: Math 0.53 h and Programming 0.47 h, 0.00 h remaining.
+  - Friday: Programming 1.00 h, 0.00 h remaining.
+  - Saturday and Sunday: no study planned, 0.00 h remaining.
+  - Total planned: 5.00 h (Math 3.53 h, Programming 1.47 h), and 8.60 h of Programming could not be planned.
 
 ---
 #### US-8: Weekly record of studied hours
