@@ -30,7 +30,7 @@ Study Planner solves the part of the problem where the weekly self-study hours a
 - Each module is shown on its own line in the format "Name of the module - number of ECTS : description".
 - The displayed list starts at 1. and follows the order in modules.txt
 - **Given** modules.txt contains the five assesment modules, **when** the list is diplayed, **then** five line are shown.
-- **However, given** a line in modules.txt does not have the format "Name; ECTS; description", **then** this line is skipped with the message "Skipping invalid line: ...” and the other modules are still displayed.
+- **However, given** a line in modules.txt does not have the format "Name;ECTS;description", **then** this line is skipped with the message "Skipping {nb of line} invalid line(s)” and the other modules are still displayed.
 
 ---
 #### US-2: Select modules to calculate overall hours for each 
