@@ -10,7 +10,7 @@ MENU = (
     "7 Create study plan",
     "8 Record studied hours",
     "9 Export bar chart",
-    "0 Exit the programm",
+    "0 Exit the program",
     
 )
 
@@ -41,4 +41,4 @@ while choice != "0":
     elif choice == "0":
         print("good bye")
     else:
-        print("invalid choice")
+        print("Invalid choice.")
