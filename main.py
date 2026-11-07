@@ -1,4 +1,6 @@
 import Tahir 
+import Marine
+import Marcela
 
 MENU = (
     "1 Show module list",
@@ -21,7 +23,7 @@ while choice != "0":
         print(option)
     choice = input("Choose an option or 0 to exit: ")
     if choice == "1":
-        print("US-1 in progress") #Marine.function US 1
+        Marine.show_modules_info("modules.txt")
     elif choice == "2":
         print("US-2 in progress") #Marine.function US 2
     elif choice == "3":
