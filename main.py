@@ -25,6 +25,7 @@ while choice != "0":
     if choice == "1":
         Marine.show_modules_info("modules.txt")
     elif choice == "2":
+        Marine.select_modules("modules.txt")
         print("US-2 in progress") #Marine.function US 2
     elif choice == "3":
         Tahir.remove_module()
@@ -41,6 +42,6 @@ while choice != "0":
     elif choice == "9":
         Tahir.export_chart()
     elif choice == "0":
-        print("good bye")
+        print("Good bye")
     else:
         print("Invalid choice.")
