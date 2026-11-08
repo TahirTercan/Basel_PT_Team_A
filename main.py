@@ -17,18 +17,20 @@ MENU = (
 )
 
 choice = ""
+Marine.my_modules.append("Mathematics_1")
+Marine.my_modules.append("Statistics_1")
 while choice != "0":
     print("\nMain Menu - select an option")
     for option in MENU:
         print(option)
-    choice = input("Choose an option or 0 to exit: ")
+    choice = input("\nChoose an option or 0 to exit: ")
     if choice == "1":
         Marine.show_modules_info("modules.txt")
     elif choice == "2":
         Marine.select_modules("modules.txt")
         print("US-2 in progress") #Marine.function US 2
     elif choice == "3":
-        Tahir.remove_module()
+        Tahir.remove_module(Marine.my_modules)
     elif choice == "4":
         Tahir.enter_class_hours()
     elif choice == "5":
