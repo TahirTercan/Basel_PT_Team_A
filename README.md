@@ -275,7 +275,7 @@ We used an AI assistant (Claude and ChatGPT) as a sparring partner, as allowed b
 |------------|----------------------------------------------|
 | Marine     | US-1, US-2 and US-8                          |
 | Marcela    | US-5, US-6 and US-7                          |
-| Tahir      | US-3, US-4 and US-9                          |
+| Tahir      | US-3, US-4, US-9 and main menu (main.py)     |
 
 
 ## 🤝 Contributing
