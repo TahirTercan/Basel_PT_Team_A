@@ -28,7 +28,7 @@ Study Planner solves the part of the problem where the weekly self-study hours a
 **Acceptance criteria**
 - The assesment modules list, their ECTS and descritpion are diplayed when option 1 in the main menu.
 - Each module is shown on its own line in the format "Name of the module - number of ECTS : description".
-- The displayed list starts at 1. and follows the order in modules.txt
+- The displayed list starts at 1 and follows the order in modules.txt.
 - **Given** modules.txt contains the five assesment modules, **when** the list is diplayed, **then** five line are shown.
 - **However, given** a line in modules.txt does not have the format "Name;ECTS;description", **then** this line is skipped with the message "Skipping {nb of line} invalid line(s)” and the other modules are still displayed.
 
@@ -37,7 +37,8 @@ Study Planner solves the part of the problem where the weekly self-study hours a
 **As a** student, **I want** to add modules from the list to my selection, **so that** I can calculate the total semester workload for the modules I am taking.
 
 **Acceptance criteria**
-- The list of modules with their associated number is displayed to allow the student to know which number should be selected depending on which class is taken, in the format "Number Name of the module", when selecting option 2 in the main menu.
+- The list of modules with their associated number is displayed to allow the student to know which number should be selected depending on which class is taken, in the format "Name of the module", when selecting option 2 in the main menu.
+- The displayed list starts at 1. and follows the order in module.txt.
 - The programm will ask which module should be added to the personalised selection.
 - If the selection is done, the calculation of the overall hours of the selected modules will be displayed. Each line will display one module and its associated overall hours in the format "Number Name of the module - Number of ECTS : Overall hours for the semester".
 - **Given** the module 1 Mathematics_1 which represents 3 ECTS,**when** selected, **then** the overall hours for this module will be displayed, i.e. 90 hours.
