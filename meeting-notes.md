@@ -4,7 +4,7 @@
 ## Next actions:
 - [x] Share Git Hub repository with Lecturers by 07/10. For them to check Problem and user stories.
 - [x] Agree on recurrent group meetings, Sunday 14:00?
-- [ ] In person touch point: Wednesdays at 12:15 to check questions/progress. 
+- [x] In person touch point: Wednesdays at 12:15 to check questions/progress. 
 - [x] Review user stories and update up to 9 user stories.
 - [x] Assigned user stories (3 per group member)
 
@@ -55,8 +55,28 @@ Let’s aim for 29. Nov.
 ### To do until 25.10
 - start drafting mindmaps and flow
 
+## Meeting Notes 25.10.2026 - Meeting #5
+
+### Done
+- reviewed the acceptance criteria with lecturers feedback
+- corrected round-up rule
+- talked about overall layout and flow of the program
+
+### To do until 01.11
+- start on the code for user stories
+
+## Meeting Notes 01.11.2026 - Meeting #6
+
+### Done 
+- each started on the user stories code
+
+### To do until 15.11 (no meeting on the 08.11)
+- continue on the user stories code
+- adjust acceptance criteria as we go
+
+
 ## How we collaborate
 - MS Teams
 - Whatsapp
 - Fix meetings onsite, on Wednesdays 12:15
-- Sessions at the weekend, planned prior
+- Sessions on the weekend, planned prior
