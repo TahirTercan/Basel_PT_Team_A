@@ -26,7 +26,7 @@ def remove_module(selected_modules):
 
 #US 4
 
-def enter_class_hours(selected_modules):
+def enter_class_hours(selected_modules, ects_by_name):
     if len(selected_modules) == 0:
             print("No modules selected. Please add modules with option 2.")
             return # return back to main menu

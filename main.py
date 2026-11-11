@@ -1,6 +1,6 @@
-import Tahir 
-import Marine
-import Marcela
+import tahir 
+import marine
+import marcela
 
 MENU = (
     "1 Show module list",
@@ -22,14 +22,14 @@ while choice != "0":
         print(option)
     choice = input("\nChoose an option or 0 to exit: ")
     if choice == "1":
-        Marine.show_modules_info("modules.txt")
+        marine.show_modules_info("modules.txt")
     elif choice == "2":
-        Marine.select_modules("modules.txt")
+        marine.select_modules("modules.txt")
         print("US-2 in progress") #Marine.function US 2
     elif choice == "3":
-        Tahir.remove_module(Marine.my_modules)
+        tahir.remove_module(Marine.my_modules)
     elif choice == "4":
-        Tahir.enter_class_hours()
+        tahir.enter_class_hours()
     elif choice == "5":
         print("US-5 in progress") #Marcela.function US 5
     elif choice == "6":
@@ -39,7 +39,7 @@ while choice != "0":
     elif choice == "8":
         print("US-8 in progress") #Marine.function US 8
     elif choice == "9":
-        Tahir.export_chart()
+        tahir.export_chart()
     elif choice == "0":
         print("Good bye")
     else:
