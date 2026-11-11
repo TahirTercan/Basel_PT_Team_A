@@ -10,23 +10,26 @@ def remove_module(selected_modules):
         if answer == "done":
             return # return back to main menu
         count_selection = len(selected_modules)
-        if not answer.isdigit():
+        highest = str(count_selection)
+        if len(answer) != 1:
             print("This module is not in your selection.")
-        elif int(answer) < 1 or int(answer) > count_selection:
+        elif answer < "1" or answer > highest:
             print("This module is not in your selection.")
         else:
             position_to_delete = int(answer) - 1
             name_of_selection = selected_modules[position_to_delete]
             del selected_modules[position_to_delete]
             print(f"Removed: {name_of_selection}")
-    print("No modules selected")
+    print("No modules selected.")
 
 
 
 #US 4
 
-def enter_class_hours():
-    print("US-4 in progress")
+def enter_class_hours(selected_modules):
+    if len(selected_modules) == 0:
+            print("No modules selected. Please add modules with option 2.")
+            return # return back to main menu
 
 
 #US 9

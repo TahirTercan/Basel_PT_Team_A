@@ -13,12 +13,9 @@ MENU = (
     "8 Record studied hours",
     "9 Export bar chart",
     "0 Exit the program",
-    
 )
 
 choice = ""
-Marine.my_modules.append("Mathematics_1")
-Marine.my_modules.append("Statistics_1")
 while choice != "0":
     print("\nMain Menu - select an option")
     for option in MENU:
