@@ -15,6 +15,7 @@ MENU = (
     "0 Exit the program",
 )
 
+ects_by_name, descriptions, names, skipped = (marine.load_modules("modules.txt"))
 choice = ""
 while choice != "0":
     print("\nMain Menu - select an option")
@@ -27,9 +28,9 @@ while choice != "0":
         marine.select_modules("modules.txt")
         print("US-2 in progress") #Marine.function US 2
     elif choice == "3":
-        tahir.remove_module(Marine.my_modules)
+        tahir.remove_module(marine.my_modules)
     elif choice == "4":
-        tahir.enter_class_hours()
+        tahir.enter_class_hours(marine.my_modules, ects_by_name)
     elif choice == "5":
         print("US-5 in progress") #Marcela.function US 5
     elif choice == "6":

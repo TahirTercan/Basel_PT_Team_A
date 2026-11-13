@@ -239,12 +239,15 @@ The application reads and writes data using files:
 ### Technology
 - Python 3.x
 - Environment: Visual Studio Code (VS Code)
-- One external library for the chart (to be decided)
+- One external library for the chart: matplotlib
 
 ### 📂 Repository Structure
 ```text
 Basel_PT_Team_A/
 ├── main.py             # main program logic (console application)
+├── marine.py           # US-1, US-2, US-8
+├── marcela.py          # US-5, US-6, US-7
+├── tahir.py            # US-3, US-4, US-9
 ├── modules.txt         # assessement modules (input data file)
 ├── study_log.txt       # example of a generated recorded self-study hours (output file)
 ├── meeting-notes.md    # our notes, deadlines and objectives for the duration of the project
@@ -254,7 +257,11 @@ Basel_PT_Team_A/
 ### How to Run
 1. Open the repository in **VS Code**
 2. Open the **Terminal**
-3. Run:
+3. Install the chart library (only the first time):
+	```bash
+	pip3 install matplotlib
+	```
+4. Run:
 	```bash
 	python3 main.py
 	```
@@ -262,7 +269,7 @@ Basel_PT_Team_A/
 ### Libraries Used
 
 - Standard library only 
-- Library for the chart (to be decided).
+- external matplotlib library, used for the bar chart in US-9
 
 The chart library will be added here once we have chosen it.
 
