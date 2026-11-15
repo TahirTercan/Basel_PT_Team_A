@@ -22,11 +22,11 @@ while choice != "0":
     for option in MENU:
         print(option)
     choice = input("\nChoose an option or 0 to exit: ")
-    if choice == "1":
+    print()
+    if choice == "1":   #US-1(Marine)
         marine.show_modules_info("modules.txt")
-    elif choice == "2":
+    elif choice == "2":    #US-2(Marine)
         marine.select_modules("modules.txt")
-        print("US-2 in progress") #Marine.function US 2
     elif choice == "3":
         tahir.remove_module(marine.my_modules)
     elif choice == "4":
