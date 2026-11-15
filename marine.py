@@ -84,9 +84,4 @@ def select_modules(module_file):
     
 
 
-##main file
-#makes the info of the modules.txt file usable easily
-#load_modules("modules.txt")
 
-# US-1:necessary function for US-01
-#show_modules_info("modules.txt")
