@@ -74,9 +74,25 @@ Let’s aim for 29. Nov.
 - continue on the user stories code
 - adjust acceptance criteria as we go
 
+## Meeting Notes 15.11.2026 - Meeting #7
+
+### Done 
+- US-1
+- half of US-2
+- US-3
+- US-4
+- US-5
+- US-6
+
+### To do until 22.11
+- continue the user stories
+- review acceptance criterias as we go so that it matches our user stories specifications
+- review edge cases as well
+- implement US-5 and 6 to the main menus
+- look to link our user stories together to avoid redundance 
 
 ## How we collaborate
 - MS Teams
 - Whatsapp
-- Fix meetings onsite, on Wednesdays 12:15
-- Sessions on the weekend, planned prior
+- Fix meetings on sundays
+- Sessions onsite, on Wednesdays 12:15
