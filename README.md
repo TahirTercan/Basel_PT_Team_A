@@ -26,7 +26,7 @@ Study Planner solves the part of the problem where the weekly self-study hours a
 **As a** student, **I want** to see a numbered list of the five assesment modules of my programm with their ECTS and a short description of each of them, **so that** I can have an overview of the modules of the first semester without looking them up somewhere else. 
 
 **Acceptance criteria**
-- The assesment modules list, their ECTS and descritpion are diplayed when option 1 in the main menu.
+- The assesment modules list, their ECTS and description are displayed when selecting option 1 in the main menu.
 - Each module is shown on its own line in the format "Name of the module - number of ECTS : description".
 - The displayed list starts at 1 and follows the order in modules.txt.
 - **Given** modules.txt contains the five assesment modules, **when** the list is diplayed, **then** five line are shown.
@@ -40,10 +40,10 @@ Study Planner solves the part of the problem where the weekly self-study hours a
 - The list of modules with their associated number is displayed to allow the student to know which number should be selected depending on which class is taken, in the format "Name of the module", when selecting option 2 in the main menu.
 - The displayed list starts at 1. and follows the order in module.txt.
 - The programm will ask which module should be added to the personalised selection.
-- If the selection is done, the calculation of the overall hours of the selected modules will be displayed. Each line will display one module and its associated overall hours in the format "Number Name of the module - Number of ECTS : Overall hours for the semester".
+- If the selection is done, the calculation of the overall hours of the selected modules will be displayed. Each line will display one module and its associated overall hours in the format "Name of the module - Number of ECTS : {overall hours to invest for module} hours.".
 - **Given** the module 1 Mathematics_1 which represents 3 ECTS,**when** selected, **then** the overall hours for this module will be displayed, i.e. 90 hours.
-- **However, given** a number is not an option in the list,  **then** the message "Error : select a number for the list." will be displayed and the selecting question will be asked again.
-- **However, given** a number is already selected, **then** the message "Error : the module is already selected." will be displayed and the selecting question will be asked again.
+- **However, given** a number is not an option in the list,  **then** the message "Invalid choice. Please select a number from the list." will be displayed and the selecting question will be asked again.
+- **However, given** a number is already selected, **then** the message "The selected module is already in your personalised list" will be displayed, the personalised list will be displayed and the selecting question will be asked again.
 
 ---
 #### US-3: Remove a module 
