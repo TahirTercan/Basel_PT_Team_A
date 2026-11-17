@@ -15,8 +15,9 @@ def round_half_up(value):
 
 #self-study hours of one module for the whole semester
 def self_study_per_semester(module, module_file, class_hours_semester, experience_level):
-    ects_by_name, description_by_name, module_name, skipped_line = load_modules(module_file)  #function from Marine's file
-    ects = float(ects_by_name[module])
+    import marine      #this enables me to use load_module from Marine's file
+    ects_by_name, description_by_name, module_name, skipped_line = marine.load_modules(module_file)  #function from Marine's file
+    ects = int(ects_by_name[module]) #ects are stored as text in the dictionary
     subject_workload = HOURS_PER_ECTS * ects
     reduction = REDUCTION_BY_LEVEL[experience_level]
     return (subject_workload - class_hours_semester) * (1 - reduction)
@@ -42,7 +43,8 @@ def view_self_study(selected_modules, module_file, class_hours_by_name, experien
             print (f"{module}: data missing. Please complete it with option 4.")
             continue
 
-        class_hours = class_hours_by_name[module]
+        class_hours_week = class_hours_by_name[module] #class hours per week comming from US4
+        class_hours = class_hours_by_name[module] #class hours per semester
         level = experience_by_name[module]
 
         hours_semester = self_study_per_semester(module, module_file, class_hours, level)
@@ -61,6 +63,19 @@ def view_self_study(selected_modules, module_file, class_hours_by_name, experien
         print("No module has complete data yet.")
 
     return total_semester, total_week
+
+#total self-study hours per week of all selected modules with complete data --> needed for US6 (nothing is printed in the terminal)
+def total_self_study_per_week(selected_modules, module_file, class_hours_by_name, experience_by_name):
+    total_week = 0
+
+    for module in selected_modules:
+        if module in class_hours_by_name and module in experience_by_name:
+            class_hours = class_hours_by_name[module] * WEEKS_FOR_LECTURES #class hours per semester
+            hours_semester = self_study_per_semester(module, module_file, class_hours, experience_by_name[module])
+            total_week += self_study_per_week(hours_semester)
+
+    return total_week
+
 
 #--------------------------------------------------------------------------------------------------------------------------------
 
