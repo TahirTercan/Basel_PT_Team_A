@@ -14,7 +14,9 @@ def round_half_up(value):
     return round(value + 0.000001, 2)
 
 #self-study hours of one module for the whole semester
-def self_study_per_semester(ects, class_hours_semester, experience_level):
+def self_study_per_semester(module, module_file, class_hours_semester, experience_level):
+    ects_by_name, description_by_name, module_name, skipped_line = load_modules(module_file)  #function from Marine's file
+    ects = float(ects_by_name[module])
     subject_workload = HOURS_PER_ECTS * ects
     reduction = REDUCTION_BY_LEVEL[experience_level]
     return (subject_workload - class_hours_semester) * (1 - reduction)
@@ -26,7 +28,7 @@ def self_study_per_week(hours_semester):
 #--------------------------------------------------------------------------------------------------------------------------------
 
 #US-5: View Self-Study Hours per Module and Week
-def view_self_study(selected_modules, ects_by_name, class_hours_by_name, experience_by_name):
+def view_self_study(selected_modules, module_file, class_hours_by_name, experience_by_name):
     if len(selected_modules) == 0:
         print ("No modules selected. Please add modules with option 2.")
         return 0, 0                        #return back to main menu
@@ -40,11 +42,10 @@ def view_self_study(selected_modules, ects_by_name, class_hours_by_name, experie
             print (f"{module}: data missing. Please complete it with option 4.")
             continue
 
-        ects = float(ects_by_name[module])
         class_hours = class_hours_by_name[module]
         level = experience_by_name[module]
 
-        hours_semester = self_study_per_semester(ects, class_hours, level)
+        hours_semester = self_study_per_semester(module, module_file, class_hours, level)
         hours_week = self_study_per_week(hours_semester)
 
         total_semester += hours_semester
@@ -110,3 +111,4 @@ def enter_free_hours(total_self_study_week):
 
 
 #--------------------------------------------------------------------------------------------------------------------------------
+##function US-7
