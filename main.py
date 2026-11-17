@@ -32,7 +32,7 @@ while choice != "0":
     elif choice == "4":
         tahir.enter_class_hours(marine.my_modules, ects_by_name)
     elif choice == "5":
-        print("US-5 in progress") #Marcela.function US 5
+        marcela.view_self_study(marine.my_modules, "modules.txt", tahir.class_hours_by_name, tahir.experience_by_name)
     elif choice == "6":
         print("US-6 in progress") #Marcela.function US 6 
     elif choice == "7":

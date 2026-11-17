@@ -15,7 +15,7 @@ def round_half_up(value):
 
 #self-study hours of one module for the whole semester
 def self_study_per_semester(module, module_file, class_hours_semester, experience_level):
-    import marine      #this enables me to use load_module from Marine's file
+    import marine      #this enables me to use load_modules from Marine's file
     ects_by_name, description_by_name, module_name, skipped_line = marine.load_modules(module_file)  #function from Marine's file
     ects = int(ects_by_name[module]) #ects are stored as text in the dictionary
     subject_workload = HOURS_PER_ECTS * ects
@@ -42,9 +42,8 @@ def view_self_study(selected_modules, module_file, class_hours_by_name, experien
         if module not in class_hours_by_name or module not in experience_by_name:
             print (f"{module}: data missing. Please complete it with option 4.")
             continue
-
-        class_hours_week = class_hours_by_name[module] #class hours per week comming from US4
-        class_hours = class_hours_by_name[module] #class hours per semester
+    
+        class_hours = class_hours_by_name[module] * WEEKS_FOR_LECTURES #class hours per semester
         level = experience_by_name[module]
 
         hours_semester = self_study_per_semester(module, module_file, class_hours, level)
@@ -54,8 +53,7 @@ def view_self_study(selected_modules, module_file, class_hours_by_name, experien
         total_week += hours_week
         counted_modules += 1
 
-        print(f"{module}: {class_hours:.2f} hours class, {EXPERIENCE_NAMES[level]}, "
-              f"{round_half_up(hours_semester):.2f} hours per semester, {round_half_up(hours_week):.2f} hours per week")
+        print(f"{module}: {class_hours:.2f} hours class, {EXPERIENCE_NAMES[level]}, {round_half_up(hours_semester):.2f} hours per semester, {round_half_up(hours_week):.2f} hours per week")
 
     if counted_modules > 0 :
         print(f"Total: {round_half_up(total_semester):.2f} hours per semester, {round_half_up(total_week):.2f} hours per week")
