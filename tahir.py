@@ -26,7 +26,8 @@ def remove_module(selected_modules):
 
 #------------US 4-------------
 
-class_hours_by_name = {}
+#empty dict for us 5
+class_hours_by_name = {} 
 experience_by_name = {}
 
 def enter_class_hours(selected_modules, ects_by_name):
@@ -67,7 +68,7 @@ def export_chart():
     print("US-9 in progress")
 
 #Test
-enter_class_hours(["Mathematics_1", "Statistics_1"], {"Mathematics_1": 3, "Statistics_1": 3})
+#enter_class_hours(["Mathematics_1", "Statistics_1"], {"Mathematics_1": 3, "Statistics_1": 3})
 
-print(class_hours_by_name)
-print(experience_by_name)
+#print(class_hours_by_name)
+#print(experience_by_name)
