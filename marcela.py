@@ -82,16 +82,17 @@ def total_self_study_per_week(selected_modules, module_file, class_hours_by_name
 def ask_free_hours(day):
     hours = -1              #start value that is not valid
     while hours < 0:
-        answer = input(f"Free hours on {day}: ")
-        if not answer.replace(".", "", 1).isdigit():    #only digits and one point are allowed, so letters, or negative values are not valid
+        answer = input (f"Free hours on {day}: ")
+        try:
+            value = float(answer) #letter, signs, special characters or empty text produces an error
+        except ValueError:
             print("Invalid number.")
         else:
-            value = float(answer)
-            if value > 24 or value % 0.5 != 0:
-                print("Free hours must be between 0 and 24, in steps of 0.5.") #only hours between 0 and 24, and only 0.5 decimals is accepted. eg: 2.5, or 4.5. (7.8 is not accepted).
+            if value < 0 or value > 24 or value % 0.5 != 0:
+                print ("Free hours must be between 0 and 24, in steps of 0.5.") #only hours between 0 and 24, and 0.5 decimals are accepted.
             else:
                 hours = value
-    return hours
+        return hours
 
 
 #--------------------------------------------------------------------------------------------------------------------------------
