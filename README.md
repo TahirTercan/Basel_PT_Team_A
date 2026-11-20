@@ -22,7 +22,7 @@ Study Planner solves the part of the problem where the weekly self-study hours a
 ### 📖 User Stories
 
 ---
-#### US-1 : List of the assesment modules
+#### US-1 : Display list of the assesment modules
 **As a** student, **I want** to see a numbered list of the five assesment modules of my programm with their ECTS and a short description of each of them, **so that** I can have an overview of the modules of the first semester without looking them up somewhere else. 
 
 **Acceptance criteria**
@@ -41,7 +41,7 @@ Study Planner solves the part of the problem where the weekly self-study hours a
 - The displayed list starts at 1. and follows the order in module.txt.
 - The programm will ask which module should be added to the personalised selection.
 - If the selection is done, the calculation of the overall hours of the selected modules will be displayed. Each line will display one module and its associated overall hours in the format "Name of the module - Number of ECTS : {overall hours to invest for module} hours.".
-- **Given** the module 1 Mathematics_1 which represents 3 ECTS,**when** selected, **then** the overall hours for this module will be displayed, i.e. 90 hours.
+- **Given** the module 1 Mathematics_1 which represents 3 ECTS,**when** the module selection consists of Mathematics_1, **then** the overall hours for this module will be displayed, i.e. 90 hours.
 - **However, given** a number is not an option in the list,  **then** the message "Invalid choice. Please select a number from the list." will be displayed and the selecting question will be asked again.
 - **However, given** a number is already selected, **then** the message "The selected module is already in your personalised list" will be displayed, the personalised list will be displayed and the selecting question will be asked again.
 
@@ -135,7 +135,7 @@ Self study hours for Math module (3ECTS) = ((30hrs * 3 ECTS) - class hours per s
   - Total planned: 5.00 h (Math 3.53 h, Programming 1.47 h), and 8.60 h of Programming could not be planned.
 
 ---
-#### US-8: Weekly record of studied hours
+#### US-8: Record weekly studied hours
 **As a** student, **I want** to keep a weekly record of the hours I actually studied for each of my selected module, **so that** I can see if I am falling behind over the weeks and if so from how much.
 
 **Acceptance criteria**
@@ -150,7 +150,7 @@ Self study hours for Math module (3ECTS) = ((30hrs * 3 ECTS) - class hours per s
 - **However, given** study_log.txt does not exist at start, **then** the message “No saved data found.” is displayed and the program starts with an empty selection.
 
 ---
-#### US-9: Bar chart export from beginning of semester until given week.
+#### US-9: Export bar chart from beginning of semester until given week
 **As a** student, **I want** to export a bar chart of my planned and actual study hours per module from the beginning of the semester until a given week, **so that** I can see directly in which module I am behind.
 
 **Acceptance criteria**
