@@ -16,6 +16,7 @@ MENU = (
 )
 
 ects_by_name, descriptions, names, skipped = (marine.load_modules("modules.txt"))
+free_hours_by_day = {} #filled with US6 and used later for US7
 choice = ""
 while choice != "0":
     print("\nMain Menu - select an option")
@@ -34,7 +35,8 @@ while choice != "0":
     elif choice == "5":
         marcela.view_self_study(marine.my_modules, "modules.txt", tahir.class_hours_by_name, tahir.experience_by_name)
     elif choice == "6":
-        print("US-6 in progress") #Marcela.function US 6 
+        total_week = marcela.total_self_study_per_week(marine.my_modules, "modules.txt", tahir.class_hours_by_name, tahir.experience_by_name)
+        free_hours_by_day = marcela.enter_free_hours(total_week)
     elif choice == "7":
         print("US-7 in progress") #Marcela.function US 7
     elif choice == "8":
