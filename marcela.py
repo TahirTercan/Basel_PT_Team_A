@@ -17,7 +17,7 @@ def round_half_up(value):
 def self_study_per_semester(module, module_file, class_hours_semester, experience_level):
     import marine      #this enables me to use load_modules from Marine's file
     ects_by_name, description_by_name, module_name, skipped_line = marine.load_modules(module_file)  #function from Marine's file
-    ects = int(ects_by_name[module]) #ects are stored as text in the dictionary
+    ects = (ects_by_name[module]) #ects are stored as int in the dictionary
     subject_workload = HOURS_PER_ECTS * ects
     reduction = REDUCTION_BY_LEVEL[experience_level]
     return (subject_workload - class_hours_semester) * (1 - reduction)
