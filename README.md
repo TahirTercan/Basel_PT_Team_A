@@ -227,6 +227,15 @@ The program asks again until the class hours are 0 or more and the class hours p
 	```
 	This rejects negative numbers and too many class hours.
 
+- **Self study hours (US-5):**
+The program only includes a module in the calculation when both class hours and experience level are given. Otherwise it shows an error message and skips the module:
+
+```python
+if module not in class_hours_by_name or module not in experience_by_name:
+	print (f"f{module}: data missing. Please it with option 4.")
+	continue
+```
+
 ---
 
 ---
