@@ -232,10 +232,26 @@ The program only includes a module in the calculation when both class hours and 
 
 ```python
 if module not in class_hours_by_name or module not in experience_by_name:
-	print (f"f{module}: data missing. Please it with option 4.")
+	print(f"{module}: data missing. Please complete it with option 4.")
 	continue
 ```
+This skips modules with missing data, so they are not counted in the totals.
 
+- **Free hours (US-6):**
+The program asks again for the same day until the free hours are a number between 0 and 24, in steps of 0.5:
+
+```python
+try:
+	value = float(answer)
+except ValueError:
+	print("Invalid number.")
+else:
+	if value < 0 or value > 24 or value % 0.5 != 0:
+		print("Free hours must be between 0 and 24, in steps of 0.5.")
+	else:
+		hours = value
+```
+This rejects letter, special characters, a comma (eg: 1,5), empty input, negative numbers, numbers > 24 and numbers that are not a multiple of 0.5 (eg: 2.25)
 ---
 
 ---
