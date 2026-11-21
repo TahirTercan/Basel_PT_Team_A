@@ -206,6 +206,27 @@ The program checks every input before it uses it:
 
 If an input is wrong, the program shows a message and asks again. The exact cases are the "However, given" lines in the user stories above. Code examples will be added when the functions are written.
 
+- **Menu option (main.py):** The main menu accepts only the options 0 to 9. Every other input shows a message and the menu is displayed again:
+
+	```python
+	else:
+	    print("Invalid choice.")
+	```
+	This also works for letters and empty input, because the input stays text and is only compared.
+
+- **Class hours (US-4):** 
+The program asks again until the class hours are 0 or more and the class hours per semester are smaller than the workload of the module:
+
+	```python
+	while hours_per_week < 0 or hours_per_week * 13 >= workload_semester:
+	    if hours_per_week < 0:
+	        print("Invalid number.")
+	    else:
+	        print(f"Class hours must be less than the workload of {workload_semester} h.")
+	    hours_per_week = float(input(f"{module} - class hours per week: "))
+	```
+	This rejects negative numbers and too many class hours.
+
 ---
 
 ---
@@ -271,8 +292,6 @@ Basel_PT_Team_A/
 - Standard library only 
 - external matplotlib library, used for the bar chart in US-9
 
-The chart library will be added here once we have chosen it.
-
 ### Use of AI
 
 We used an AI assistant (Claude and ChatGPT) as a sparring partner, as allowed by the project guidelines: to understand the course slides, to check our user stories and acceptance criteria against the template and the lecturers feedback and to correct our English. The ideas, decisions and examples are our own and we write all code ourselves.
@@ -306,9 +325,10 @@ This project is provided for **educational use only** as part of the Programming
 |-----|-------|------|-----------:|
 | 1 | Mathematics_1 | 3 | Think logically |
 | 2 | Statistics_1 | 3 | Decrypt data, get insights |
-| 3 | Principles_of_Management | 6 | Recognize organizational structures, shape and manage compagnies |
-| 4 | Programming_Fundations | 6 | Gain an overall view, get to know key technologies |
-| 5 | Digital_Business | 6 | Learn to code, discover the world of 0s and 1s |
+| 3 | Principles_of_Management | 6 | Recognize organizational structures, shape and manage companies |
+| 4 | Digital_Business | 6 | Gain an overall view, get to know key technologies |
+| 5 | Programming_Foundations | 6 | Learn to code, discover the world of 0s and 1s |
+
 
 Module weight -> Module overview BSc Business Information Technology part time, URL: https://www.fhnw.ch/++api++/de/wirtschaft/studium/angebot/studiengaenge/media/web_bit_cur25_moduluebersicht_tz.pdf/@@inline-file/file 
 Structure of the year -> "Jahresstruktur 2025 bis FS 2031_Start Curriculum25", URL: https://fhnw365.sharepoint.com/sites/inside-HSW-Stud/Freigegebene%20Dokumente/Forms/AllItems.aspx?csf=1&web=1&e=BOKMeT&CID=edd24bad%2Daca8%2D4a72%2D8ee6%2D47d8fdc24d5f&FolderCTID=0x012000223CD24C15B3F34CBC643E657E20FD95&id=%2Fsites%2Finside%2DHSW%2DStud%2FFreigegebene%20Dokumente%2FTermine%2FDeutsch 
