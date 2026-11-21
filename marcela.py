@@ -17,7 +17,7 @@ def round_half_up(value):
 def self_study_per_semester(module, module_file, class_hours_semester, experience_level):
     import marine      #this enables me to use load_modules from Marine's file
     ects_by_name, description_by_name, module_name, skipped_line = marine.load_modules(module_file)  #function from Marine's file
-    ects = (ects_by_name[module]) #ects are stored as int in the dictionary
+    ects = ects_by_name[module] #ects are stored as int in the dictionary
     subject_workload = HOURS_PER_ECTS * ects
     reduction = REDUCTION_BY_LEVEL[experience_level]
     return (subject_workload - class_hours_semester) * (1 - reduction)
@@ -31,7 +31,7 @@ def self_study_per_week(hours_semester):
 #US-5: View Self-Study Hours per Module and Week
 def view_self_study(selected_modules, module_file, class_hours_by_name, experience_by_name):
     if len(selected_modules) == 0:
-        print ("No modules selected. Please add modules with option 2.")
+        print("No modules selected. Please add modules with option 2.")
         return 0, 0                        #return back to main menu
 
     total_semester = 0
@@ -40,7 +40,7 @@ def view_self_study(selected_modules, module_file, class_hours_by_name, experien
 
     for module in selected_modules:
         if module not in class_hours_by_name or module not in experience_by_name:
-            print (f"{module}: data missing. Please complete it with option 4.")
+            print(f"{module}: data missing. Please complete it with option 4.")
             continue
     
         class_hours = class_hours_by_name[module] * WEEKS_FOR_LECTURES #class hours per semester
@@ -82,34 +82,34 @@ def total_self_study_per_week(selected_modules, module_file, class_hours_by_name
 def ask_free_hours(day):
     hours = -1              #start value that is not valid
     while hours < 0:
-        answer = input (f"Free hours on {day}: ")
+        answer = input(f"Free hours on {day}: ")
         try:
-            value = float(answer) #letter, signs, special characters or empty text produces an error
+            value = float(answer) #letters, special characters or empty text produce an error
         except ValueError:
             print("Invalid number.")
         else:
             if value < 0 or value > 24 or value % 0.5 != 0:
-                print ("Free hours must be between 0 and 24, in steps of 0.5.") #only hours between 0 and 24, and 0.5 decimals are accepted.
+                print("Free hours must be between 0 and 24, in steps of 0.5.") #only hours between 0 and 24, and 0.5 decimals are accepted.
             else:
                 hours = value
-        return hours
+    return hours
 
 
 #--------------------------------------------------------------------------------------------------------------------------------
 #US-6: Enter Weekly availability to assess self-study time
 
 def enter_free_hours(total_self_study_week):
-    free_hour_by_day = {}            #empty dictionary for the free hours/day
+    free_hours_by_day = {}            #empty dictionary for the free hours/day
     total_free = 0
 
     for day in DAYS_OF_WEEK:
         hours = ask_free_hours(day)
-        free_hour_by_day[day] = hours
+        free_hours_by_day[day] = hours
         total_free += hours
 
     print("Free hours per day:")
     for day in DAYS_OF_WEEK:
-        print(f"{day}: {round_half_up(free_hour_by_day[day]):.2f} hours")
+        print(f"{day}: {round_half_up(free_hours_by_day[day]):.2f} hours")
     print(f"Total free time: {round_half_up(total_free):.2f} hours per week")
 
     if total_self_study_week == 0:
@@ -121,7 +121,7 @@ def enter_free_hours(total_self_study_week):
         else:
             missing = - difference
             print(f"The free time is not enough, {round_half_up(missing):.2f} hours missing.")
-    return free_hour_by_day
+    return free_hours_by_day
 
 
 #--------------------------------------------------------------------------------------------------------------------------------
