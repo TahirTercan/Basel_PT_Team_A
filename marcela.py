@@ -125,4 +125,27 @@ def enter_free_hours(total_self_study_week):
 
 
 #--------------------------------------------------------------------------------------------------------------------------------
-##function US-7
+## US-7: Generate a Personalised Weekly Study Plan
+
+def create_study_plan(selected_modules, module_file, class_hours_by_name, experience_by_name, free_hours_by_day):
+    if len(selected_modules) == 0:
+        print("No modules selected. Please add modules with option 2.")
+        return #return back to main menu
+
+    if len(free_hours_by_day) == 0:
+        print("No free hours entered. Please enter them first with option 6.")
+        return
+
+    need_by_module = {} #hours per week to be planned per module
+    planned_by_module = {} #hours per week that are already planned per module
+
+    for module in selected_modules:
+        if module in class_hours_by_name and module in experience_by_name:
+            class_hours = class_hours_by_name[module] * WEEKS_FOR_LECTURES #class hours per semester
+            hours_semester = self_study_per_semester(module, module_file, class_hours, experience_by_name[module])
+            need_by_module[module] = self_study_per_week(hours_semester)
+            planned_by_module[module] = 0
+
+    if len(need_by_module) == 0:
+        print("No module has complete data yet. Please complete it with option 4.")
+        return
