@@ -38,7 +38,7 @@ while choice != "0":
         total_week = marcela.total_self_study_per_week(marine.my_modules, "modules.txt", tahir.class_hours_by_name, tahir.experience_by_name)
         free_hours_by_day = marcela.enter_free_hours(total_week)
     elif choice == "7":
-        print("US-7 in progress") #Marcela.function US 7
+        marcela.create_study_plan(marine.my_modules, "modules.txt", tahir.class_hours_by_name, tahir.experience_by_name, free_hours_by_day)
     elif choice == "8":
         print("US-8 in progress") #Marine.function US 8
     elif choice == "9":

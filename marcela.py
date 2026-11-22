@@ -136,6 +136,7 @@ def create_study_plan(selected_modules, module_file, class_hours_by_name, experi
         print("No free hours entered. Please enter them first with option 6.")
         return
 
+#step 1:
     need_by_module = {} #hours per week to be planned per module
     planned_by_module = {} #hours per week that are already planned per module
 
@@ -149,3 +150,5 @@ def create_study_plan(selected_modules, module_file, class_hours_by_name, experi
     if len(need_by_module) == 0:
         print("No module has complete data yet. Please complete it with option 4.")
         return
+
+    print(need_by_module) #test step 1
