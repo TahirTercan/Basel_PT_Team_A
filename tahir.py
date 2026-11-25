@@ -6,15 +6,15 @@ def remove_module(selected_modules):
     while len(selected_modules) > 0:
         for i in range(len(selected_modules)):
             print(f"{i+1}. {selected_modules[i]}")
-        answer = input("Number of the module to remove (or done): ")
+        answer = input("\nNumber of the module to remove (or done): ")
         if answer == "done":
             return # return back to main menu
         count_selection = len(selected_modules)
         highest = str(count_selection)
         if len(answer) != 1:
-            print("This module is not in your selection.")
+            print("\nThis module is not in your selection.\n")
         elif answer < "1" or answer > highest:
-            print("This module is not in your selection.")
+            print("\nThis module is not in your selection.\n")
         else:
             position_to_delete = int(answer) - 1
             name_of_selection = selected_modules[position_to_delete]
@@ -36,17 +36,29 @@ def enter_class_hours(selected_modules, ects_by_name):
         return # return back to main menu
     for module in selected_modules:
         workload_semester = int(ects_by_name[module]) * 30
-        hours_per_week = float(input(f"{module} - class hours per week: "))
+        try: 
+            hours_per_week = float(input(f"{module} - class hours per week: "))
+        except ValueError:
+            hours_per_week = -1
         while hours_per_week < 0 or hours_per_week * 13 >= workload_semester: #solange die Std negativ sind oder mehr als workload
             if hours_per_week < 0:
                 print("Invalid number.")
             else: 
                 print(f"Class hours must be less than the workload of {workload_semester} h.")
-            hours_per_week = float(input(f"{module} - class hours per week: ")) #in while, not in if else condition, asking after condition again
-        experience = int(input(f"{module} - experience (1 = no previous experience, 2 = intermediate, 3 = high): "))
+            try:
+                hours_per_week = float(input(f"{module} - class hours per week: ")) #in while, not in if else condition, asking after condition again
+            except ValueError:
+                hours_per_week = -1
+        try:
+            experience = int(input(f"{module} - experience (1 = no previous experience, 2 = intermediate, 3 = high): "))
+        except ValueError:
+            experience = 0
         while experience < 1 or experience > 3:
             print("Invalid choice.")
-            experience = int(input(f"{module} - experience (1 = no previous experience, 2 = intermediate, 3 = high): "))
+            try:
+                experience = int(input(f"{module} - experience (1 = no previous experience, 2 = intermediate, 3 = high): "))
+            except ValueError:
+                experience = 0
         if experience == 1:
             experience_name = "no previous experience"
         elif experience == 2:

@@ -44,6 +44,6 @@ while choice != "0":
     elif choice == "9":
         tahir.export_chart()
     elif choice == "0":
-        print("Good bye")
+        print("Good bye\n")
     else:
         print("Invalid choice.")
