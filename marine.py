@@ -2,28 +2,26 @@
 ##functions
 #creating dictionary for module-ects + module-description + module list
 def load_modules(module_file):
-    ects_by_name={} 
-    description_by_name={}    
-    module_name=list()    
-    skipped_line=0    
+     ects_by_name={}
+     description_by_name={}
+     skipped_line=0
+     try :
+         with open(module_file, "r", encoding="utf-8") as infile :
+             infile.readline()
+             for line in infile:
+                 parts=line.strip().split(";")
 
-    file=open(module_file)
-
-    for line in file:
-        parts=line.strip().split(";")
-
-        if line.strip()=="" or len(parts)!=3:   #checking for empty lines and lines not in the right format
-            skipped_line+=1
-            continue
-       
-        module,ects,description=parts
-        ects_by_name[module]=int(ects)    
-        description_by_name[module]=description   
-        module_name = list(ects_by_name.keys())   
-
-    file.close()
-
-    return ects_by_name, description_by_name, module_name, skipped_line
+                 if line.strip()=="" or len(parts)!=3:   #checking for empty lines and lines not in the right format
+                    skipped_line+=1
+                    continue
+        
+                 module,ects,description=parts
+                 ects_by_name[module]=int(ects)    
+                 description_by_name[module]=description
+                 module_name=list(ects_by_name.keys())   
+             return ects_by_name, description_by_name, module_name, skipped_line
+     except(FileNotFoundError):
+         print("The file does not exist.")
 
 #---------------------------------------------------------------------------------------------
 # US-1 : showing the modules
@@ -98,7 +96,11 @@ def select_modules(module_file):
     show_overall_hours(module_file)  #shows selected modules with nb ECTS and calculated overall hours
     print("\nIf you wish to delete a module from your selection, select option 2 in the main menu.")
     return my_modules   
-    
+
+
+#---------------------------------------------------------------------------------------------
+# US-8 : Record weekly self study hours and save output file
+
 
 
 
