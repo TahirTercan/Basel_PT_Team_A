@@ -1,3 +1,4 @@
+Assessment modules :
 Mathematics_1; 3; Think logically
 Statistics_1; 3; Decrypt data, get insights
 Principles_of_Management; 6; Recognize organizational structures, shape and manage companies
