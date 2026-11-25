@@ -146,8 +146,8 @@ Self study hours for Math module (3ECTS) = ((30hrs * 3 ECTS) - class hours per s
 - At program start, the file is read and the message “Loaded M module(s) and W week(s).” is displayed, so the student does not have to select the modules again.
 - If a week is recorded a second time, the new value replaces the old one. There is one value per module and week.
 - **Given** the personalised selection of module is 1 Mathematics_1 and the student selected intermediate experience in the module, **when** the week selected is week 1, the student is all done with the self-study this week and the recorded self-study hours for this module are 2 hours, **then** the student will see that the self study hours invested for week 1 were insufficent.
-- **However, given** no modules were selected, **then** the program will show the error message "No modules selected, please add modules with option 2".
-- **However, given** study_log.txt does not exist at start, **then** the message “No saved data found.” is displayed and the program starts with an empty selection.
+- **However, given** no modules were selected, **then** the program will show the error message "No modules selected, please add modules with option 2 in the main menu.".
+- **However, given** study_log.txt does not exist at start, **then** the message “No saved data found. Please run through the program until at least option 7 of the main menu to save.” is displayed and the program starts with an empty selection.
 
 ---
 #### US-9: Export bar chart from beginning of semester until given week
