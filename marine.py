@@ -94,7 +94,7 @@ def select_modules(module_file):
     print("Your personalised module selection with the associated overall hours to be invested per module is:")
     hours_per_modules(module_file)    #calculates overall hours/module in personalised list
     show_overall_hours(module_file)  #shows selected modules with nb ECTS and calculated overall hours
-    print("\nIf you wish to delete a module from your selection, select option 2 in the main menu.")
+    print("\nIf you wish to delete a module from your selection, select option 3 in the main menu.")
     return my_modules   
 
 
